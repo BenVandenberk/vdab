@@ -1,0 +1,16 @@
+program UittestenCallBy;
+
+// declare your variables here
+
+begin
+  var getal: integer;
+  writeln('Geef getal');
+  readln(getal);
+  VerdubbelValue(getal);
+  writeln('Waarde na value: ', getal);
+  VerdubbelReference(getal);
+  writeln('Waarde na reference: ', getal);
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.
