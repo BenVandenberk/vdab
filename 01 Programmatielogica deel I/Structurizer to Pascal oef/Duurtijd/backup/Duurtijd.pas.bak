@@ -1,0 +1,18 @@
+program Duurtijd;
+
+// declare your variables here
+
+begin
+  var begintijdUur, begintijdMinuten, duurtijdUur, duurtijdMinuten: integer;
+  var eindtijdUur, eindtijdMinuten: integer;
+  writeln('Geef een begintijd in uren en minuten (bv 8 45)');
+  readln(begintijdUur, begintijdMinuten);
+  writeln('Geef een duurtijd in uren en minuten (bv 5 30)');
+  readln(duurtijdUur, duurtijdMinuten);
+  eindtijdUur := (begintijdUur + duurtijdUur + (begintijdMinuten + duurtijdMinuten) DIV 60) MOD 24;
+  eindtijdMinuten := (begintijdMinuten + duurtijdMinuten) MOD 60;
+  writeln('De eindtijd is ', eindtijdUur, ':', eindtijdMinuten);
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.

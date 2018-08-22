@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="Sparen.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="2" Y="2"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="Sparen.pas"/>
+        <Caret Line="4" Column="4"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Sparen.pas"/>
+        <Caret Line="2" Column="11"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Sparen.pas"/>
+        <Caret Column="24"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Sparen.pas"/>
+        <Caret Line="4" Column="2"/>
+      </Position4>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,20 @@
+program Temperatuur;
+
+// declare your variables here
+  var kelvin: real;
+begin
+
+  writeln('Geef een temperatuur in Kelvin');
+  readln(kelvin);
+  if (kelvin < 0) then
+  begin
+    writeln('Temperatuur uitgedrukt in Kelvin kan niet negatief zijn.');
+  end
+  else
+  begin
+    writeln(kelvin:0:2, ' K = ', (kelvin - 273.15):0:2, ' C.');
+  end;
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.

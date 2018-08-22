@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Lidgeld&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var LIDGELD_PER_JAAR: real&#34;,&#34;var REDUCTIE_50_PLUS, REDUCTIE_KIND, REDUCTIE_LAAG_INKOMEN: real&#34;,&#34;var GRENS_LAAG_INKOMEN, MAX_REDUCTIE, MAX_KIND_REDUCTIE: real&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var naam: string&#34;,&#34;var leeftijd, kinderenTenLaste: integer&#34;,&#34;var jaarinkomen, totaleKorting, resulterendLidgeld: real&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var aantalLeden: integer&#34;,&#34;var totaalLidgeld, gemiddeldeLidgeld: real&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;LIDGELD_PER_JAAR := 10&#34;,&#34;REDUCTIE_50_PLUS := 2&#34;,&#34;REDUCTIE_KIND := 1&#34;,&#34;REDUCTIE_LAAG_INKOMEN := 2.5&#34;,&#34;GRENS_LAAG_INKOMEN := 12500&#34;,&#34;MAX_REDUCTIE := 8.5&#34;,&#34;MAX_KIND_REDUCTIE := 5&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;aantalLeden := 0&#34;,&#34;totaalLidgeld := 0&#34;,&#34;gemiddeldeLidgeld := 0&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '********* LIDGELD *********'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<repeat text="&#34;Until (naam = 'stop') OR (naam = 'STOP')&#34;" comment="" color="ffffff">
+			<qRepeat>
+				<instruction text="&#34;Write 'Geef de naam van het lid:'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read naam&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;(naam &#60;&#62; 'stop') AND (naam &#60;&#62; 'STOP')&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;aantalLeden := aantalLeden + 1&#34;,&#34;totaleKorting := 0&#34;,&#34;resulterendLidgeld := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Write 'Geef de leeftijd van het lid:'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Read leeftijd&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<while text="&#34;While (leeftijd &#60; 0) OR (leeftijd &#62; 120)&#34;" comment="" color="ffffff">
+							<qWhile>
+								<instruction text="&#34;Write 'De leeftijd moet een waarde hebben &#62;= 0 en &#60;= 120. Geef de leeftijd van het lid:'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;Read leeftijd&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qWhile>
+						</while>
+						<instruction text="&#34;Write 'Geef het aantal kinderen ten laste van het lid:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Read kinderenTenLaste&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<while text="&#34;While (kinderenTenLaste &#60; 0) OR (kinderenTenLaste &#62; 20)&#34;" comment="&#34;&#34;" color="ffffff">
+							<qWhile>
+								<instruction text="&#34;Write 'Het aantal kinderen ten laste moet een waarde hebben &#62;= 0 en &#60;= 20.'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;Write 'Geef het aantal kinderen ten laste van het lid:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;Read kinderenTenLaste&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qWhile>
+						</while>
+						<instruction text="&#34;Write 'Geef het jaarinkomen van het lid:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Read jaarinkomen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<while text="&#34;While jaarinkomen &#60; 0&#34;" comment="&#34;&#34;" color="ffffff">
+							<qWhile>
+								<instruction text="&#34;Write 'Het jaarinkomen mag niet negatief zijn. Geef het jaarinkomen van het lid:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;Read jaarinkomen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qWhile>
+						</while>
+						<alternative text="&#34;leeftijd &#62; 50&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;totaleKorting := totaleKorting + REDUCTIE_50_PLUS&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<alternative text="&#34;kinderenTenLaste &#60; 5&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;totaleKorting := totaleKorting + (kinderenTenLaste * REDUCTIE_KIND)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;totaleKorting := totaleKorting + MAX_KIND_REDUCTIE&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qFalse>
+						</alternative>
+						<alternative text="&#34;jaarinkomen &#60; GRENS_LAAG_INKOMEN&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;totaleKorting := totaleKorting + REDUCTIE_LAAG_INKOMEN&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<alternative text="&#34;totaleKorting &#62; MAX_REDUCTIE&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;totaleKorting := MAX_REDUCTIE&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<instruction text="&#34;resulterendLidgeld := LIDGELD_PER_JAAR - totaleKorting&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;totaalLidgeld := totaalLidgeld + resulterendLidgeld&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;gemiddeldeLidgeld := gemiddeldeLidgeld + resulterendLidgeld&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Write 'Lid ', naam, ', ', leeftijd, ' jaar oud, met ', kinderenTenLaste, ' kinderen ten laste en een jaarinkomen van ', jaarinkomen:0:2, ' euro moet ', resulterendLidgeld:0:2, ' euro lidgeld betalen'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+			</qRepeat>
+		</repeat>
+		<alternative text="&#34;aantalLeden &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;gemiddeldeLidgeld := totaalLidgeld / aantalLeden&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Aantal leden: ', aantalLeden&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Totaal lidgeld: ', totaalLidgeld:0:2, ' euro'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<alternative text="&#34;gemiddeldeLidgeld &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;Write 'Gemiddeld lidgeld: ', gemiddeldeLidgeld:0:2, ' euro'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;Write 'Gemiddeld lidgeld: N/A'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

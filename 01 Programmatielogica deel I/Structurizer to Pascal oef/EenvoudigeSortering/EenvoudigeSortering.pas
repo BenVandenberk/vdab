@@ -1,0 +1,48 @@
+program EenvoudigeSortering;
+
+// declare your variables here
+  var a, b, c: integer;
+begin
+
+  writeln('Geef drie getallen in (bv 1 30 10)');
+  readln(a, b, c);
+  if (a >= b) then
+  begin
+    if (a >= c) then
+    begin
+      if (b >= c) then
+      begin
+        writeln(a, ' ', b, ' ', c);
+      end
+      else
+      begin
+        writeln(a, ' ', c, ' ', b);
+      end;
+    end
+    else
+    begin
+      writeln(c, ' ', a, ' ', b);
+    end;
+  end
+  else
+  begin
+    if (a >= c) then
+    begin
+      writeln(b, ' ', a, ' ', c);
+    end
+    else
+    begin
+      if (b >= c) then
+      begin
+        writeln(b, ' ', c, ' ', a);
+      end
+      else
+      begin
+        writeln(c, ' ', b, ' ', a);
+      end;
+    end;
+  end;
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.

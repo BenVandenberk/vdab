@@ -1,0 +1,22 @@
+program TafelVanVermenigvuldiging;
+
+// declare your variables here
+  var getal, factor: integer;
+  var opnieuw: char;
+begin
+
+  writeln('********* MAALTAFELS *********');
+  repeat
+    writeln('Geef een getal waarvan het programma de tafel van vermenigvuldiging laat zien:');
+    readln(getal);
+    writeln();
+    for factor := 0 to 10 do
+    begin
+      writeln(getal, ' x ', factor, ' = ', getal * factor);
+    end;
+    writeln();
+    writeln('Nog een keer? (j/n)');
+    readln(opnieuw);
+    writeln();
+  until (opnieuw = 'n') OR (opnieuw = 'N');
+end.

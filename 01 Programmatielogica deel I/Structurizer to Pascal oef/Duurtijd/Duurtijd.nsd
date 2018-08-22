@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Duurtijd&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var begintijdUur, begintijdMinuten, duurtijdUur, duurtijdMinuten: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var eindtijdUur, eindtijdMinuten: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef een begintijd in uren en minuten (bv 8 45)'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read begintijdUur, begintijdMinuten&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef een duurtijd in uren en minuten (bv 5 30)'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read duurtijdUur, duurtijdMinuten&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;eindtijdUur := (begintijdUur + duurtijdUur + (begintijdMinuten + duurtijdMinuten) DIV 60) MOD 24&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;eindtijdMinuten := (begintijdMinuten + duurtijdMinuten) MOD 60&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'De eindtijd is ', eindtijdUur, ':', eindtijdMinuten&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

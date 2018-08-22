@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Sparen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;USES Math&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var beginKapitaal, intrestPercentage: real&#34;,&#34;var looptijd, teller: integer&#34;,&#34;var opnieuw: char&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '********** SPAREN **********'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<repeat text="&#34;Until (opnieuw = 'n') OR (opnieuw = 'N')&#34;" comment="&#34;&#34;" color="ffffff">
+			<qRepeat>
+				<instruction text="&#34;Write 'Geef een beginkapitaal: '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read beginKapitaal&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<while text="&#34;While beginKapitaal &#60; 0&#34;" comment="&#34;&#34;" color="ffffff">
+					<qWhile>
+						<instruction text="&#34;Write 'De waarde voor het beginkapitaal moet positief zijn. Geef een beginkapitaal:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Read beginKapitaal&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qWhile>
+				</while>
+				<instruction text="&#34;Write 'Geef een intrestpercentage (in %):'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read intrestPercentage&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;intrestPercentage := intrestPercentage / 100&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Geef een looptijd:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read looptijd&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<while text="&#34;While looptijd &#60; 1&#34;" comment="&#34;&#34;" color="ffffff">
+					<qWhile>
+						<instruction text="&#34;Write 'De waarde voor de looptijd moet een geheel getal groter dan 0 zijn. Geef een looptijd:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Read looptijd&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qWhile>
+				</while>
+				<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For teller := 0 To looptijd&#34;" comment="&#34;&#34;" color="ffffff">
+					<qFor>
+						<instruction text="&#34;Write 'Na ', teller, ' jaren is er ', (beginKapitaal * power(1 + intrestPercentage, teller)):0:2, ' gekapitaliseerd'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Nog een keer? (j/n)'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read opnieuw&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qRepeat>
+		</repeat>
+	</children>
+</root>

@@ -1,0 +1,14 @@
+program Draagkracht;
+
+// declare your variables here
+  var breedte, hoogte, lengte: real;
+
+begin
+
+  writeln('Geef de hoogte, breedte en lengte van de balk in cm (bv 100 10.5 20)');
+  readln(hoogte, breedte, lengte);
+  writeln('Het gewicht dat de balk maximaal kan dragen bedraagt ', (19 * breedte * hoogte * hoogte / lengte):0:3, ' kg.');
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="Kindergeld.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos Y="4"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="Kindergeld.pas"/>
+        <Caret Line="58" Column="3" TopLine="29"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Kindergeld.pas"/>
+        <Caret Line="4"/>
+      </Position2>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

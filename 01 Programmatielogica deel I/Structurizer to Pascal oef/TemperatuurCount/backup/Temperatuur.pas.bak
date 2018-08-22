@@ -1,0 +1,67 @@
+program Temperatuur;
+
+// declare your variables here
+
+begin
+  var aantalPos, aantalNeg, aantalNul: integer;
+  var tempWaarde, gemiddeldePos, gemiddeldeNeg: real;
+  aantalPos := 0;
+  aantalNeg :=0;
+  aantalNul := 0;
+  gemiddeldePos := 0;
+  gemiddeldeNeg := 0;
+  writeln('Geef een reeks temperaturen in (99 om te stoppen)');
+  readln(tempWaarde);
+  while (tempWaarde <> 99) do
+  begin
+    if (tempWaarde > 0) then
+    begin
+      aantalPos := aantalPos + 1;
+      gemiddeldePos := gemiddeldePos + tempWaarde;
+    end
+    else
+    begin
+      if (tempWaarde < 0) then
+      begin
+        aantalNeg := aantalNeg + 1;
+        gemiddeldeNeg := gemiddeldeNeg + tempWaarde;
+      end
+      else
+      begin
+        aantalNul := aantalNul + 1;
+      end;
+    end;
+    readln(tempWaarde);
+  end;
+  if (aantalPos > 0) then
+  begin
+    gemiddeldePos := gemiddeldePos / aantalPos;
+  end;
+  if (aantalNeg > 0) then
+  begin
+    gemiddeldeNeg := gemiddeldeNeg / aantalNeg;
+  end;
+  writeln();
+  writeln('Aantal positieve temperaturen: ', aantalPos);
+  writeln('Aantal negatieve temperaturen: ', aantalNeg);
+  writeln('Aantal nul-temperaturen: ', aantalNul);
+  if (gemiddeldePos <> 0) then
+  begin
+    writeln('Gemiddelde van de positieve temperaturen: ', gemiddeldePos:0:2);
+  end
+  else
+  begin
+    writeln('Gemiddelde van de positieve temperaturen: N/A');
+  end;
+  if (gemiddeldeNeg <> 0) then
+  begin
+    writeln('Gemiddelde van de negatieve temperaturen: ', gemiddeldeNeg:0:2);
+  end
+  else
+  begin
+    writeln('Gemiddelde van de negatieve temperaturen: N/A');
+  end;
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.

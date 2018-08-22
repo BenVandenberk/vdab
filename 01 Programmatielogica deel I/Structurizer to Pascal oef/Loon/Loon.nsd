@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Loon&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var overuurCoeff, uurloon, aantalUren, aantalOveruren, brutoloon: real&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;overuurCoeff := 1.5&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'LOONBEREKENING'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Overuren worden uitbetaald aan ', (overuurCoeff * 100):0:0, '%.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Aantal uren?'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read aantalUren&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Aantal overuren?'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read aantalOveruren&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Uurloon?'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read uurloon&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;brutoloon := uurloon * aantalUren + uurloon * overuurCoeff * aantalOveruren&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Het brutoloon bedraagt ', brutoloon:0:2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

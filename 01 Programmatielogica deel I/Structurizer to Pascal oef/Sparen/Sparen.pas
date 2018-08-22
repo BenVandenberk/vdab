@@ -1,0 +1,39 @@
+program Sparen;
+   USES Math;
+  var beginKapitaal, intrestPercentage: real;
+  var looptijd, teller: integer;
+  var opnieuw: char;
+// declare your variables here
+
+begin
+
+  writeln('********** SPAREN **********');
+  repeat
+    writeln('Geef een beginkapitaal: ');
+    readln(beginKapitaal);
+    while (beginKapitaal < 0) do
+    begin
+      writeln('De waarde voor het beginkapitaal moet positief zijn. Geef een beginkapitaal:');
+      readln(beginKapitaal);
+    end;
+    writeln('Geef een intrestpercentage (in %):');
+    readln(intrestPercentage);
+    intrestPercentage := intrestPercentage / 100;
+    writeln('Geef een looptijd:');
+    readln(looptijd);
+    while (looptijd < 1) do
+    begin
+      writeln('De waarde voor de looptijd moet een geheel getal groter dan 0 zijn. Geef een looptijd:');
+      readln(looptijd);
+    end;
+    writeln();
+    for teller := 0 to looptijd do
+    begin
+      writeln('Na ', teller, ' jaren is er ', (beginKapitaal * power(1 + intrestPercentage, teller)):0:2, ' gekapitaliseerd');
+    end;
+    writeln();
+    writeln('Nog een keer? (j/n)');
+    readln(opnieuw);
+    writeln();
+  until (opnieuw = 'n') OR (opnieuw = 'N');
+end.

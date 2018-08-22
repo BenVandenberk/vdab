@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Kindergeld&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var aantalKinderen: integer&#34;,&#34;var maandloon, resulterendKindergeld: real&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var basisBedragPerKind: real&#34;,&#34;var derdeKindsToeslag, vijfdeKindsToeslag: real&#34;,&#34;var laagMaandloon, hoogMaandloon: real&#34;,&#34;var maandloonBonusMalus: real&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;basisBedragPerKind := 25&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;derdeKindsToeslag := 12.5&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;vijfdeKindsToeslag := 7.5&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;laagMaandloon := 500&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;hoogMaandloon := 2000&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;maandloonBonusMalus := 0.25&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef het aantal kinderen en het maandloon in (bv 2 1675.68))'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read aantalKinderen, maandloon&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;resulterendKindergeld := aantalKinderen * basisBedragPerKind&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<alternative text="&#34;(aantalKinderen &#60; 0) OR (maandloon &#60; 0)&#34;" comment="" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;Write 'Zowel het aantal kinderen als het maandloon moeten positieve waarden groter dan 0 zijn'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+				<alternative text="&#34;aantalKinderen &#62;= 3&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;resulterendKindergeld := resulterendKindergeld + (aantalkinderen - 2) * derdeKindsToeslag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;aantalKinderen &#62;= 5&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;resulterendKindergeld := resulterendKindergeld + (aantalKinderen - 4) * vijfdeKindsToeslag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;maandloon &#60;= laagMaandloon&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;resulterendKindergeld := resulterendKindergeld * (1 + maandloonBonusMalus)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;maandloon &#62; hoogMaandloon&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;resulterendKindergeld := resulterendKindergeld * (1 - maandloonBonusMalus)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;resulterendKindergeld &#60; aantalKinderen * basisBedragPerKind&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;resulterendKindergeld := aantalKinderen * basisBedragPerKind&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;Write 'De moeder heeft recht op ', resulterendKindergeld:0:2, ' euro kindergeld'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>
