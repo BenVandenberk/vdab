@@ -1,0 +1,48 @@
+program Omrekenen;
+
+// declare your variables here
+
+begin
+  var KG_TO_LBS, LBS_TO_KG, CM_TO_IN, IN_TO_CM: real;
+  var waarde: real;
+  var keuze: integer;
+  LBS_TO_KG := 0.45;
+  KG_TO_LBS := 1 / LBS_TO_KG;
+  IN_TO_CM := 2.54;
+  CM_TO_IN := 1 / IN_TO_CM;
+  repeat
+    writeln('1. KILOGRAM naar POND');
+    writeln('2. POND naar KILOGRAM');
+    writeln('3. CENTIMETER NAAR INCH');
+    writeln('4. INCH NAAR CENTIMETER');
+    writeln('5. STOP');
+    readln(keuze);
+    while (keuze < 1) OR (keuze > 5) do
+    begin
+      writeln('Ongeldige menukeuze. Kies een menu optie (1 - 5):');
+      readln(keuze);
+    end;
+    if (keuze < 5) then
+    begin
+      writeln('Geef een waarde om om te rekenen:');
+      readln(waarde);
+      case (keuze) of
+        1:
+          begin
+            writeln(waarde:0:2, ' kg = ', (waarde * KG_TO_LBS):0:2, ' pond');
+          end;
+        2:
+          begin
+            writeln(waarde:0:2, ' pond = ', (waarde * LBS_TO_KG):0:2, ' kg');
+          end;
+        3:
+          begin
+            writeln(waarde:0:2, ' cm = ', (waarde * CM_TO_IN):0:2, ' inch');
+          end;
+        else
+          writeln(waarde:0:2, ' inch = ', (waarde * IN_TO_CM):0:2, ' cm');
+        end;
+      writeln();
+    end;
+  until (keuze = 5);
+end.

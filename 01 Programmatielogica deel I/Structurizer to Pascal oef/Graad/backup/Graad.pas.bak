@@ -1,0 +1,70 @@
+program Graad;
+
+// declare your variables here
+
+begin
+  var naam: string;
+  var aantalVakken: integer;
+  var alleVakkenGeslaagd: boolean;
+  var puntenRunningtotal: real;
+  var procentAggregaat: integer;
+  var teller: integer;
+  var huidigVak: integer;
+  writeln('********** GRAAD **********');
+  writeln('Van hoeveel vakken moeten er punten ingelezen worden?');
+  readln(aantalVakken);
+  while (aantalVakken < 1) OR (aantalVakken > 30) do
+  begin
+    writeln('Gelieve een aantal vakken te kiezen van minimaal 1 en maximaal 30:');
+    readln(aantalVakken);
+  end;
+  writeln('Geef de naam van de student (<stop> om te stoppen):');
+  readln(naam);
+  while (naam <> 'stop') AND (naam <> 'STOP') do
+  begin
+    alleVakkenGeslaagd := true;
+    puntenRunningtotal := 0;
+    for teller := 1 to aantalVakken do
+    begin
+      writeln('Geef het punt op 20 voor vak ', teller);
+      readln(huidigVak);
+      while (huidigVak < 0) OR (huidigVak > 20) do
+      begin
+        writeln('Ongeldige score. Gelieve een punt op 20 te geven:');
+        readln(huidigVak);
+      end;
+      alleVakkenGeslaagd := alleVakkenGeslaagd AND (huidigVak >= 10);
+      puntenRunningtotal := puntenRunningtotal + huidigVak;
+    end;
+    procentAggregaat := trunc(round(puntenRunningtotal * 5 / aantalVakken));
+    if (alleVakkenGeslaagd) then
+    begin
+      case (procentAggregaat) of
+        90 .. 100:
+          begin
+            writeln('Student ', naam, ' behaalde GROOTSTE ONDERSCHEIDING [', procentAggregaat, ']');
+          end;
+        80 .. 89:
+          begin
+            writeln('Student ', naam, ' behaalde GROTE ONDERSCHEIDING [', procentAggregaat, ']');
+          end;
+        70 .. 79:
+          begin
+            writeln('Student ', naam, ' behaalde ONDERSCHEIDING [', procentAggregaat, ']');
+          end;
+        60 .. 69:
+          begin
+            writeln('Student ', naam, ' behaalde VOLDOENING [', procentAggregaat, ']');
+          end;
+        else
+          writeln('Student ', naam, ' is NIET GESLAAGD [', procentAggregaat, ']');
+        end;
+    end
+    else
+    begin
+      writeln('Student ', naam, ' is NIET GESLAAGD [Gezakt voor een of meerdere vakken]');
+    end;
+    writeln('Geef de naam van de student (<stop> om te stoppen):');
+    readln(naam);
+  end;
+end.

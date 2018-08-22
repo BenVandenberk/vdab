@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Graad&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var naam: string&#34;,&#34;var aantalVakken: integer&#34;,&#34;var alleVakkenGeslaagd: boolean&#34;,&#34;var puntenRunningTotal: real&#34;,&#34;var procentAggregaat: integer&#34;,&#34;var teller: integer&#34;,&#34;var huidigVak: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '********** GRAAD **********'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Van hoeveel vakken moeten er punten ingelezen worden?'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read aantalVakken&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While (aantalVakken &#60; 1) OR (aantalVakken &#62; 30)&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Write 'Gelieve een aantal vakken te kiezen van minimaal 1 en maximaal 30:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read aantalVakken&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;Write 'Geef de naam van de student (&#60;stop&#62; om te stoppen):'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read naam&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While (naam &#60;&#62; 'stop') AND (naam &#60;&#62; 'STOP')&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;alleVakkenGeslaagd := true&#34;,&#34;puntenRunningTotal := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For teller := 1 To aantalVakken&#34;" comment="&#34;&#34;" color="ffffff">
+					<qFor>
+						<instruction text="&#34;Write 'Geef het punt op 20 voor vak ', teller&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Read huidigVak&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<while text="&#34;While (huidigVak &#60; 0) OR (huidigVak &#62; 20)&#34;" comment="&#34;&#34;" color="ffffff">
+							<qWhile>
+								<instruction text="&#34;Write 'Ongeldige score. Gelieve een punt op 20 te geven:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;Read huidigVak&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qWhile>
+						</while>
+						<instruction text="&#34;alleVakkenGeslaagd := alleVakkenGeslaagd AND (huidigVak &#62;= 10)&#34;,&#34;puntenRunningTotal := puntenRunningTotal + huidigVak&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;procentAggregaat := trunc(round(puntenRunningTotal * 5 / aantalVakken))&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;alleVakkenGeslaagd&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<case text="&#34;procentAggregaat&#34;,&#34;90 .. 100&#34;,&#34;80 .. 89&#34;,&#34;70 .. 79&#34;,&#34;60 .. 69&#34;,&#34;Default&#34;" comment="&#34;&#34;" color="ffffff">
+							<qCase>
+								<instruction text="&#34;Write 'Student ', naam, ' behaalde GROOTSTE ONDERSCHEIDING [', procentAggregaat, ']'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qCase>
+							<qCase>
+								<instruction text="&#34;Write 'Student ', naam, ' behaalde GROTE ONDERSCHEIDING [', procentAggregaat, ']'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qCase>
+							<qCase>
+								<instruction text="&#34;Write 'Student ', naam, ' behaalde ONDERSCHEIDING [', procentAggregaat, ']'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qCase>
+							<qCase>
+								<instruction text="&#34;Write 'Student ', naam, ' behaalde VOLDOENING [', procentAggregaat, ']'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qCase>
+							<qCase>
+								<instruction text="&#34;Write 'Student ', naam, ' is NIET GESLAAGD [', procentAggregaat, ']'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qCase>
+						</case>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;Write 'Student ', naam, ' is NIET GESLAAGD [Gezakt voor een of meerdere vakken]'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;Write 'Geef de naam van de student (&#60;stop&#62; om te stoppen):'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read naam&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+	</children>
+</root>
