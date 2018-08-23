@@ -1,0 +1,14 @@
+function InvoerInteger(boodschap: string; min, max: integer): integer;
+
+// declare your variables here
+
+begin
+  writeln(boodschap);
+  readln(InvoerInteger);
+  while (InvoerInteger < min) OR (InvoerInteger > max) do
+  begin
+    writeln('De waarde mag minimaal ', min, ' en maximaal ', max, ' zijn');
+    writeln(boodschap);
+    readln(InvoerInteger);
+  end;
+end.

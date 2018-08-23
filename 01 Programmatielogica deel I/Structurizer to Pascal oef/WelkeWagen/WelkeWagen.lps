@@ -4,27 +4,29 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
-        <Filename Value="SomVanCijfersMain.pas"/>
+        <Filename Value="WelkeWagen.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="52" Y="6"/>
+        <TopLine Value="19"/>
+        <CursorPos X="9" Y="34"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="SomVanCijfers.pas"/>
+        <Filename Value="InvoerInteger.pas"/>
         <EditorIndex Value="1"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="InvoerReal.pas"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
     </Units>
-    <JumpHistory Count="1">
-      <Position1>
-        <Filename Value="SomVanCijfersMain.pas"/>
-        <Caret Line="6"/>
-      </Position1>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
 </CONFIG>

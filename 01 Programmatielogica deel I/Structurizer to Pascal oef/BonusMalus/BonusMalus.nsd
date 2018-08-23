@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;BonusMalus&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var trap, aantalOngevallen: integer&#34;,&#34;var opnieuw: char&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '************ BONUS MALUS ************'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<repeat text="&#34;Until (opnieuw = 'n') OR (opnieuw = 'N')&#34;" comment="&#34;&#34;" color="ffffff">
+			<qRepeat>
+				<call text="&#34;InvoerBonusMalus&#34;" comment="&#34;&#34;" color="ffffff"></call>
+				<call text="&#34;UpdateTrap(trap, aantalOngevallen)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+				<alternative text="&#34;trap &#62;= 18&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write 'De klant heeft een bonus-malus trap van 18 bereikt. Hij/zij kan niet langer door ons verzekerd worden.'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;Write 'De nieuwe bonus-malus trap van de klant is ', trap&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFalse>
+				</alternative>
+				<call text="&#34;opnieuw := InvoerChar('Nog een keer? (j/n)')&#34;" comment="&#34;&#34;" color="ffffff"></call>
+			</qRepeat>
+		</repeat>
+	</children>
+</root>

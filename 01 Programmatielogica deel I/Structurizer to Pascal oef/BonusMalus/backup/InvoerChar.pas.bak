@@ -1,0 +1,8 @@
+function InvoerChar(boodschap: string): char;
+
+// declare your variables here
+
+begin
+  writeln(boodschap);
+  readln(InvoerChar);
+end.

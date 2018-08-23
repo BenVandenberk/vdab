@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="4">
+      <Unit0>
+        <Filename Value="BonusMalus.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="6" Y="51"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="InvoerChar.pas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="ReadInvoerBonusMalus.pas"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="UpdateTrap.pas"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit3>
+    </Units>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="BonusMalus.pas"/>
+        <Caret Line="43" Column="10"/>
+      </Position1>
+      <Position2>
+        <Filename Value="BonusMalus.pas"/>
+        <Caret Line="7" Column="31"/>
+      </Position2>
+      <Position3>
+        <Filename Value="BonusMalus.pas"/>
+        <Caret Line="25" Column="10" TopLine="40"/>
+      </Position3>
+      <Position4>
+        <Filename Value="BonusMalus.pas"/>
+        <Caret Line="49" Column="5" TopLine="10"/>
+      </Position4>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

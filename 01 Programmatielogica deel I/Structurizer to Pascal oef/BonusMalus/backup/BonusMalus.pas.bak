@@ -1,0 +1,22 @@
+program BonusMalus;
+
+// declare your variables here
+
+begin
+  var trap, aantalOngevallen: integer;
+  var opnieuw: char;
+  writeln('************ BONUS MALUS ************');
+  repeat
+    InvoerBonusMalus;
+    UpdateTrap(trap, aantalOngevallen);
+    if (trap >= 18) then
+    begin
+      writeln('De klant heeft een bonus-malus trap van 18 bereikt. Hij/zij kan niet langer door ons verzekerd worden.');
+    end
+    else
+    begin
+      writeln('De nieuwe bonus-malus trap van de klant is ', trap);
+    end;
+    opnieuw := InvoerChar('Nog een keer? (j/n)');
+  until (opnieuw = 'n') OR (opnieuw = 'N');
+end.
