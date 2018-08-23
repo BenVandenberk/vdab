@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;PerfecteGetallen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var onderGrens, bovenGrens: integer&#34;,&#34;var huidigProbeerGetal: integer&#34;,&#34;var isPerfectGetal, geenGetallenInInterval: boolean&#34;,&#34;var opnieuw: char&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<repeat text="&#34;Until (opnieuw = 'n') OR (opnieuw = 'N')&#34;" comment="&#34;&#34;" color="ffffff">
+			<qRepeat>
+				<instruction text="&#34;geenGetallenInInterval := false&#34;,&#34;isPerfectGetal := false&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Geef twee positieve getallen waartussen het kleinste perfecte getal gezocht wordt (bv 10 25)'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read onderGrens, bovenGrens&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<while text="&#34;While (onderGrens &#62; bovenGrens) OR (onderGrens &#60;= 0) OR (bovenGrens &#60;= 0)&#34;" comment="&#34;&#34;" color="ffffff">
+					<qWhile>
+						<instruction text="&#34;Write 'De bovengrens moet minstens even groot zijn als de ondergrens. Beide waarden moeten strikt groter dan 0 zijn.'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Write 'Geef twee positieve getallen waartussen het kleinste perfecte getal gezocht wordt (bv 10 25)'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Read onderGrens, bovenGrens&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qWhile>
+				</while>
+				<instruction text="&#34;huidigProbeerGetal := onderGrens + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;bovenGrens &#60;= (onderGrens + 1)&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;geenGetallenInInterval := true&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<while text="&#34;While (NOT isPerfectGetal) AND (huidigProbeerGetal &#60; bovenGrens)&#34;" comment="&#34;&#34;" color="ffffff">
+							<qWhile>
+								<instruction text="&#34;isPerfectGetal := IsPerfect(huidigProbeerGetal)&#34;,&#34;huidigProbeerGetal := huidigProbeerGetal + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qWhile>
+						</while>
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;geenGetallenInInterval&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write 'Tussen ', onderGrens, ' en ', bovenGrens, ' liggen geen getallen.'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<alternative text="&#34;isPerfectGetal&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;Write 'Het kleinste perfecte getal tussen ', onderGrens, ' en ', bovenGrens, ' is ', huidigProbeerGetal - 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;Write 'Tussen ', onderGrens, ' en ', bovenGrens, ' liggen geen perfecte getallen.'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qFalse>
+						</alternative>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;Write 'Nog een keer? (j/n)'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read opnieuw&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qRepeat>
+		</repeat>
+	</children>
+</root>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="BreukenVereenvoudigen.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="28"/>
+        <CursorPos X="53" Y="46"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="GrootsteGemeneDeler.pas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="InvoerInteger.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="5" Y="11"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="BreukenVereenvoudigen.pas"/>
+        <Caret Line="43" Column="10" TopLine="28"/>
+      </Position1>
+      <Position2>
+        <Filename Value="InvoerInteger.pas"/>
+        <Caret Column="73"/>
+      </Position2>
+      <Position3>
+        <Filename Value="BreukenVereenvoudigen.pas"/>
+        <Caret Line="41" Column="5" TopLine="20"/>
+      </Position3>
+      <Position4>
+        <Filename Value="BreukenVereenvoudigen.pas"/>
+        <Caret Line="50" Column="25" TopLine="28"/>
+      </Position4>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;BreukenVereenvoudigen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var teller, noemer, ggd: integer&#34;,&#34;var opnieuw: char&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '************* BREUKEN VEREENVOUDIGEN *************'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<repeat text="&#34;Until (opnieuw = 'n') OR (opnieuw = 'N')&#34;" comment="&#34;&#34;" color="ffffff">
+			<qRepeat>
+				<call text="&#34;noemer := InvoerInteger('Geef de noemer:', false)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+				<call text="&#34;teller := InvoerInteger('Geef de teller:', false)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+				<call text="&#34;ggd := GrootsteGemeneDeler(teller, noemer)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+				<instruction text="&#34;teller := teller DIV ggd&#34;,&#34;noemer := noemer DIV ggd&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write '---&#62; ', teller, '/', noemer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Nog een keer? (j/n)'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read opnieuw&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qRepeat>
+		</repeat>
+	</children>
+</root>

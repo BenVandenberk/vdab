@@ -1,0 +1,27 @@
+function IsPerfect(pGetal: integer): boolean;
+
+var wortel: real;
+var som, deler: integer;
+
+begin
+
+  wortel := Sqrt(pGetal);
+  som := 1;
+  deler := 2;
+  while (deler < wortel) AND (som <= pGetal) do
+  begin
+    if (pGetal MOD deler) = 0 then
+    begin
+      if (deler = wortel) then
+      begin
+        som := som + deler;
+      end
+      else
+      begin
+        som := som + deler + (pGetal DIV deler);
+      end;
+    end;
+    deler := deler + 1;
+  end;
+  IsPerfect := som = pGetal;
+end;
