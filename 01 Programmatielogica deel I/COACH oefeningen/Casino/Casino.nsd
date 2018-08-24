@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Casino&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;Uses SYSUTILS&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var munten, inzet, rondeResultaat: integer&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var aantalSpelletjes, aantalKaarten: integer&#34;,&#34;var gemiddeldeInzet: real&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;munten := 20&#34;,&#34;inzet := 0&#34;,&#34;aantalKaarten := 0&#34;,&#34;aantalSpelletjes := 0&#34;,&#34;gemiddeldeInzet := 0&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '**************** CASINO ****************'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Aantal munten in portefeuille : ', munten&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<repeat text="&#34;Until (inzet = 0) OR (munten &#60;= 0)&#34;" comment="" color="ffffff">
+			<qRepeat>
+				<instruction text="&#34;Write 'Geef je inzet (1 tot 3, 0 om te stoppen) : '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read inzet&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<while text="&#34;While (inzet &#60; 0) OR (inzet &#62; 3) OR (inzet &#62; munten)&#34;" comment="" color="ffffff">
+					<qWhile>
+						<instruction text="&#34;Write 'Ongeldige inzet.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;inzet &#60; 0&#34;" comment="" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;Write 'De inzet moet positief zijn.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<alternative text="&#34;inzet &#62; 3&#34;" comment="" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;Write 'U heeft teveel ingezet (max. 3)'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<alternative text="&#34;inzet &#62; munten&#34;" comment="" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;Write 'Je kan niet meer inzetten dan je munten in je portefeuille hebt.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<instruction text="&#34;Write 'Geef je inzet (1 tot 3, 0 om te stoppen) : '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Read inzet&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qWhile>
+				</while>
+				<alternative text="&#34;inzet &#60;&#62; 0&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;aantalSpelletjes := aantalSpelletjes + 1&#34;,&#34;gemiddeldeInzet := gemiddeldeInzet + inzet&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;munten := munten - inzet&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<call text="&#34;rondeResultaat := SpeelRonde(aantalKaarten)&#34;" comment="" color="ffffff"></call>
+						<instruction text="&#34;munten := munten + (rondeResultaat * inzet)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;rondeResultaat &#62; 0&#34;" comment="" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;Write 'U heeft gewonnen!'&#34;,&#34;Write 'U heeft nu ', munten, ' munten'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;Write 'U heeft verloren!'&#34;,&#34;Write 'U heeft nog ', munten, ' munten'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qFalse>
+						</alternative>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qRepeat>
+		</repeat>
+		<instruction text="&#34;gemiddeldeInzet := gemiddeldeInzet / aantalSpelletjes&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'U heeft nu ', munten, ' munten'&#34;,&#34;Write 'U heeft nu ', aantalSpelletjes, ' spelletjes gespeeld'&#34;,&#34;Write 'U heeft ', aantalKaarten, ' kaarten getrokken'&#34;,&#34;Write 'U heeft een gemiddelde inzet van ', gemiddeldeInzet:0:2, ' munten'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

@@ -1,0 +1,8 @@
+function DeelKaart(): integer;
+
+// declare your variables here
+
+begin
+  RANDOMIZE;
+  DeelKaart := Random(13) + 1;
+end.
