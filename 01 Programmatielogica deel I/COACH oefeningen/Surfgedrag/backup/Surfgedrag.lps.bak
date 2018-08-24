@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="4">
+      <Unit0>
+        <Filename Value="Surfgedrag.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="24"/>
+        <CursorPos X="5" Y="41"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="LeesGeslacht.pas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="LeesLeeftijd.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="5" Y="10"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="LeesSurfgedrag.pas"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="5" Y="10"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit3>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="LeesSurfgedrag.pas"/>
+        <Caret Column="63"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Surfgedrag.pas"/>
+        <Caret Line="41" Column="5" TopLine="21"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Surfgedrag.pas"/>
+        <Caret Line="37" Column="15" TopLine="23"/>
+      </Position3>
+      <Position4>
+        <Filename Value="LeesLeeftijd.pas"/>
+        <Caret Line="3" Column="8"/>
+      </Position4>
+      <Position5>
+        <Filename Value="LeesSurfgedrag.pas"/>
+        <Caret Line="3" Column="8"/>
+      </Position5>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="1"/>
+  </Debugging>
+</CONFIG>

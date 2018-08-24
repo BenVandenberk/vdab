@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;LeesGeslacht(var geslacht: string): boolean&#34;" comment="&#34;&#34;" color="ffffff" type="sub" style="nice">
+	<children>
+		<instruction text="&#34;Write 'Geef geslacht (M, m, V, v) of &#34;&#34;stop&#34;&#34; om te eindigen : '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read geslacht&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;LeesGeslacht := (geslacht = 'M') OR (geslacht = 'm') OR (geslacht = 'V') OR (geslacht = 'v') OR (geslacht = 'stop')&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<alternative text="&#34;NOT LeesGeslacht&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;Write 'Foutief geslacht ingegeven!'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+			</qFalse>
+		</alternative>
+	</children>
+</root>
