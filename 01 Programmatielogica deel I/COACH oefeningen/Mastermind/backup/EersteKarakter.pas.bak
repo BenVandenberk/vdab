@@ -1,0 +1,7 @@
+function EersteKarakter(invoerString: string): string;
+
+// declare your variables here
+
+begin
+  EersteKarakter := copy(invoerString, 1, 1);
+end.
