@@ -1,0 +1,28 @@
+program FrequentieBepalen;
+
+// declare your variables here
+
+begin
+  var arrFrequentie: array[11..20] of integer;
+  var teller, getal: integer;
+  for teller := 11 to 20 do
+  begin
+    arrFrequentie[teller]:= 0;
+  end;
+  writeln('Geef getal tussen 11 en 20');
+  readln(getal);
+  while (getal >= 11) AND (getal <= 20) do
+  begin
+    arrFrequentie[getal]:= arrFrequentie[getal] + 1;
+    writeln('Geef getal tussen 11 en 20');
+    readln(getal);
+  end;
+  writeln('Frequentie van de getallen 11 tot 20');
+  for teller:= 11 to 20 do
+  begin
+    writeln('Cijfer ', teller, ' komt ', arrFrequentie[teller], ' keer voor.');
+  end;
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="ArraysOptellen.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="43"/>
+        <CursorPos X="12" Y="45"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="SchrijfArray.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="ArraysOptellen.pas"/>
+        <Caret Line="7" Column="26"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ArraysOptellen.pas"/>
+        <Caret Line="9" Column="7"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ArraysOptellen.pas"/>
+        <Caret Line="61" Column="12" TopLine="40"/>
+      </Position3>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="1"/>
+  </Debugging>
+</CONFIG>

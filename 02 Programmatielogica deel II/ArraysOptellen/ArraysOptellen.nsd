@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;ArraysOptellen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var arr: array of array of integer&#34;,&#34;var arr2: array of array of integer&#34;,&#34;var arrSom: array of array of integer&#34;,&#34;var aantalRijen, aantalKolommen: integer&#34;,&#34;var rij, kolom: integer&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;RANDOMIZE&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '************ ARRAYS OPTELLEN ************'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef het aantal rijen van de arrays: '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read aantalRijen&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While aantalRijen &#60; 1&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Write 'Het aantal rijen moet minstens 1 zijn.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Geef het aantal rijen van de arrays: '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read aantalRijen&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;Write 'Geef het aantal kolommen van de arrays: '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read aantalKolommen&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While aantalKolommen &#60; 1&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Write 'Het aantal kolommen moet minstens 1 zijn.'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Geef het aantal kolommen van de arrays: '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read aantalKolommen&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;SETLENGTH(arr, aantalRijen, aantalKolommen)&#34;,&#34;SETLENGTH(arr2, aantalRijen, aantalKolommen)&#34;,&#34;SETLENGTH(arrSom, aantalRijen, aantalKolommen)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For rij := 0 To aantalRijen - 1&#34;" comment="" color="ffffff">
+			<qFor>
+				<for text="&#34;For kolom := 0 To aantalKolommen - 1&#34;" comment="" color="ffffff">
+					<qFor>
+						<instruction text="&#34;arr[rij, kolom] := Random(9) + 1&#34;,&#34;arr2[rij, kolom] := Random(9) + 1&#34;,&#34;arrSom[rij, kolom] := arr[rij, kolom] + arr2[rij, kolom]&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For rij := 0 To aantalRijen - 1&#34;" comment="" color="ffffff">
+			<qFor>
+				<for text="&#34;For kolom := 0 To aantalKolommen - 1&#34;" comment="" color="ffffff">
+					<qFor>
+						<instruction text="&#34;Write arr[rij, kolom], ' '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For rij := 0 To aantalRijen - 1&#34;" comment="" color="ffffff">
+			<qFor>
+				<for text="&#34;For kolom := 0 To aantalKolommen - 1&#34;" comment="" color="ffffff">
+					<qFor>
+						<instruction text="&#34;Write arr2[rij, kolom], ' '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For rij := 0 To aantalRijen - 1&#34;" comment="" color="ffffff">
+			<qFor>
+				<for text="&#34;For kolom := 0 To aantalKolommen - 1&#34;" comment="" color="ffffff">
+					<qFor>
+						<instruction text="&#34;Write arrSom[rij, kolom], ' '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;,&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

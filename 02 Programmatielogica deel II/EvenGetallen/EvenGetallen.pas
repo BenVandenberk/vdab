@@ -1,0 +1,25 @@
+program EvenGetallen;
+
+var arr: array[0..9] of integer;
+var aantal, teller: integer;
+
+begin
+  aantal := 10;
+  for teller := 0 to aantal - 1 do
+  begin
+    writeln('Geef getal ', teller + 1);
+    readln(arr[teller]);
+  end;
+  writeln();
+  writeln('De even getallen zijn:');
+  for teller := 0 to aantal - 1 do
+  begin
+    if (arr[teller] MOD 2 = 0) then
+    begin
+      write(arr[teller], ' ');
+    end;
+  end;
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.

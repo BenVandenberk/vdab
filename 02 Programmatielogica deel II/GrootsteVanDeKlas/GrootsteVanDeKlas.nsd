@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;GrootsteVanDeKlas&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var arrLengtes: array of real&#34;,&#34;var gemiddeldeLengte, max, min: real&#34;,&#34;var aantal, extra, teller: integer&#34;,&#34;var indexGrootste, indexKleinste: integer&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;aantal := 0&#34;,&#34;extra := 5&#34;,&#34;gemiddeldeLengte := 0&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;SETLENGTH(arrLengtes, 15)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef de eerste lengte'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read arrLengtes[aantal]&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While arrLengtes[aantal] &#60;&#62; 0&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;aantal := aantal + 1&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;aantal = LENGTH(arrLengtes)&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;SETLENGTH(arrLengtes, LENGTH(arrLengtes) + extra)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;Write 'Geef een lengte of 0 om de invoer te stoppen'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read arrLengtes[aantal]&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;min := arrLengtes[0]&#34;,&#34;max := arrLengtes[0]&#34;,&#34;indexKleinste := 0&#34;,&#34;indexGrootste := 0&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For teller := 0 To aantal - 1&#34;" comment="" color="ffffff">
+			<qFor>
+				<instruction text="&#34;gemiddeldeLengte := gemiddeldeLengte + arrLengtes[teller]&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;arrLengtes[teller] &#60; min&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;indexKleinste := teller&#34;,&#34;min := arrLengtes[teller]&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;arrLengtes[teller] &#62; max&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;indexGrootste := teller&#34;,&#34;max := arrLengtes[teller]&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<alternative text="&#34;aantal &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;gemiddeldeLengte := gemiddeldeLengte / aantal&#34;,&#34;Write 'De gemiddelde lengte is ', gemiddeldeLengte:0:2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;Write 'De gemiddelde lengte is N/A'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;Write 'De grootste lengte is ', arrLengtes[indexGrootste]:0:2, ' en staat op index ', indexGrootste&#34;,&#34;Write 'De kleinste lengte is ', arrLengtes[indexKleinste]:0:2, ' en staat op index ', indexKleinste&#34;,&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>
