@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.0.0\bin\i386-win32\fpc.exe" Date="1231857874"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq &quot;-FuH:\02 Programmatielogica deel II\Structurizer to Pascal oef\PersoneelsgegevensToevoegen\&quot; &quot;-FUH:\02 Programmatielogica deel II\Structurizer to Pascal oef\PersoneelsgegevensToevoegen\lib\i386-win32\&quot; PersoneelsgegevensToevoegen.pas"/>
+</CONFIG>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;LettersTellenInEenZin&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var letterCounts: array[97..122] of integer&#34;,&#34;var zin: string&#34;,&#34;var index: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef een zin in:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read zin&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For index := LOW(letterCounts) To HIGH(letterCounts)&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;letterCounts[index] := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<for text="&#34;For index := 1 To LENGTH(zin)&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<alternative text="&#34;(ORD(zin[index]) &#62;= 65) AND (ORD(zin[index]) &#60;= 90)&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;letterCounts[ORD(zin[index]) + 32] := letterCounts[ORD(zin[index]) + 32] + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;(ORD(zin[index]) &#62;= 97) AND (ORD(zin[index]) &#60;= 122)&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;letterCounts[ORD(zin[index])] := letterCounts[ORD(zin[index])] + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For index := LOW(letterCounts) To HIGH(letterCounts)&#34;" comment="" color="ffffff">
+			<qFor>
+				<alternative text="&#34;letterCounts[index] &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write CHR(index), ' ==&#62; ', letterCounts[index] &#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

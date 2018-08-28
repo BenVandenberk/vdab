@@ -1,0 +1,47 @@
+program CoderenEnDecoderen;
+
+// declare your variables here
+
+begin
+  var sleutelWoord, teVerwerken: string;
+  var teller, resulterendNummer: integer;
+  var menuKeuze: char;
+  sleutelWoord := 'vpw';
+  writeln('Coderen(1) of decoderen(2)?');
+  readln(menuKeuze);
+  while (menuKeuze <> '1') AND (menuKeuze <> '2') do
+  begin
+    writeln('Ongeldige keuze');
+    writeln('Coderen(1) of decoderen(2)?');
+    readln(menuKeuze);
+  end;
+  case (menuKeuze) of
+    '1':
+      begin
+        writeln('Geef het te coderen woord:');
+        readln(teVerwerken);
+        for teller := 1 to LENGTH(teVerwerken) do
+        begin
+          resulterendNummer := ChartoInt(teVerwerken[teller]) + ChartoInt(sleutelWoord[( (teller - 1) MOD LENGTH(sleutelWoord) ) + 1]);
+          resulterendNummer := resulterendNummer MOD 27;
+          writeln(InttoChar(resulterendNummer));
+        end;
+      end;
+    else
+      writeln('Geef het te decoderen woord:');
+      readln(teVerwerken);
+      for teller := 1 to LENGTH(teVerwerken) do
+      begin
+        resulterendNummer := ChartoInt(teVerwerken[teller]) - ChartoInt(sleutelWoord[( (teller - 1) MOD LENGTH(sleutelWoord) ) + 1]);
+        if (resulterendNummer < 0) then
+        begin
+          resulterendNummer := ABS(resulterendNummer);
+          resulterendNummer := 27 - resulterendNummer;
+        end;
+        writeln(InttoChar(resulterendNummer));
+      end;
+    end;
+  writeln();
+  writeln('Druk op <ENTER> om  het programma te stoppen.');
+  readln();
+end.

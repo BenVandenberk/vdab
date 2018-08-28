@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;LettersTellen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var AANTAL_ASCII_TEKENS: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var woord: string&#34;,&#34;var letterCounts: array of integer&#34;,&#34;var teller: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For teller := 0 To LENGTH(letterCounts) - 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<alternative text="&#34;letterCounts[teller] &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write chr(teller), ' =&#62; ', letterCounts[teller]&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+			</qFor>
+		</for>
+		<instruction text="&#34;AANTAL_ASCII_TEKENS := 255&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;SETLENGTH(letterCounts, AANTAL_ASCII_TEKENS)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For teller := 0 To LENGTH(letterCounts) - 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;letterCounts[teller] := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write '************ LETTERS TELLEN ************'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef een woord in:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read woord&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For teller := 1 To LENGTH(woord)&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;letterCounts[ord(woord[teller])] := letterCounts[ord(woord[teller])] + 1 &#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

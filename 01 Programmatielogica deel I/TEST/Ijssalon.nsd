@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Ijssalon&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var SEPARATOR_LENGTH: integer&#34;,&#34;var PRIJS_BOL, PRIJS_EXTRAATJE: real&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var soortIjs: string&#34;,&#34;var aantalBollen: integer&#34;,&#34;var extraatje: char&#34;,&#34;var prijsIjsje: real&#34;,&#34;var soortIjsOke, aantalBollenOke, extraatjeOke: boolean&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var totaalBollen, totaalVanille, totaalChocolade: integer&#34;,&#34;var aantalIjsjes: integer&#34;,&#34;var fractieVanille, fractieChocolade, gemiddeldAantalBollen: real&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;SEPARATOR_LENGTH := 25&#34;,&#34;PRIJS_BOL := 1.2&#34;,&#34;PRIJS_EXTRAATJE := 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;totaalBollen := 0&#34;,&#34;totaalVanille := 0&#34;,&#34;totaalChocolade := 0&#34;,&#34;aantalIjsjes := 0&#34;,&#34;fractieVanille := 0&#34;,&#34;fractieChocolade := 0&#34;,&#34;gemiddeldAantalBollen := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Welkom in mijn ijssalon'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<call text="&#34;Separator('=', SEPARATOR_LENGTH)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+		<repeat text="&#34;Until soortIjs = 'stop'&#34;" comment="&#34;&#34;" color="ffffff">
+			<qRepeat>
+				<instruction text="&#34;soortIjsOke := LeesSoortIjs(soortIjs)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;soortIjs &#60;&#62; 'stop'&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<alternative text="&#34;soortIjsOke&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;aantalBollenOke := LeesAantalBollen(aantalBollen)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<alternative text="&#34;soortIjsOke AND aantalBollenOke&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;extraatjeOke := LeesExtraatje(extraatje)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<alternative text="&#34;soortIjsOke AND aantalBollenOke AND extraatjeOke&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;aantalIjsjes := aantalIjsjes + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;prijsIjsje := aantalBollen * PRIJS_BOL&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<alternative text="&#34;(extraatje = 'c') OR (extraatje = 'C')&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;prijsIjsje := prijsIjsje + PRIJS_EXTRAATJE&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+									</qFalse>
+								</alternative>
+								<instruction text="&#34;Separator('-', 25)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;Write '==&#62; dit ijsje kost ', prijsIjsje:0:2, ' euro'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;Separator('-', 25)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;totaalBollen := totaalBollen + aantalBollen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<case text="&#34;soortIjs&#34;,&#34;'v', 'V'&#34;,&#34;'c', 'C'&#34;,&#34;Default&#34;" comment="&#34;&#34;" color="ffffff">
+									<qCase>
+										<instruction text="&#34;totaalVanille := totaalVanille + aantalBollen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+										<instruction text="&#34;totaalChocolade := totaalChocolade + aantalBollen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+									</qCase>
+								</case>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qRepeat>
+		</repeat>
+		<alternative text="&#34;totaalBollen &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;fractieVanille := totaalVanille / totaalBollen&#34;,&#34;fractieChocolade := totaalChocolade / totaalBollen&#34;,&#34;gemiddeldAantalBollen := totaalBollen / aantalIjsjes&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;Write 'Resultaat van het ijssalon'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<call text="&#34;Separator('-', 25)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+		<instruction text="&#34;Write 'Totaal aantal bollen : ', totaalBollen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '   Vanille   : ', totaalVanille, '  ', (fractieVanille * 100):0:2, '%'&#34;,&#34;Write '   Chocolade : ', totaalChocolade, '  ', (fractieChocolade * 100):0:2, '%'&#34;,&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<alternative text="&#34;gemiddeldAantalBollen &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;Write 'Gemiddelde grootte van het ijsje : ', gemiddeldAantalBollen:0:2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;Write 'Gemiddelde grootte van het ijsje : N/A'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;,&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

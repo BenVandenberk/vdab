@@ -1,0 +1,13 @@
+function GemiddeldeVanKolom(pArr: tweeDim; pKolom: integer): real;
+
+// declare your variables here
+
+begin
+  var rij: integer;
+  GemiddeldeVanKolom := 0;
+  for rij := 0 to 9 do
+  begin
+    GemiddeldeVanKolom := GemiddeldeVanKolom + pArr[rij, pKolom];
+  end;
+  GemiddeldeVanKolom := GemiddeldeVanKolom / 10;
+end.

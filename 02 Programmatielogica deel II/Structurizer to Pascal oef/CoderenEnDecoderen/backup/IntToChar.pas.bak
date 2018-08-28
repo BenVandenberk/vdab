@@ -1,0 +1,14 @@
+function IntToChar(getal: integer): char;
+
+// declare your variables here
+
+begin
+  if (getal = 0) then
+  begin
+    InttoChar := ' ';
+  end
+  else
+  begin
+    InttoChar := CHR(getal + 96);
+  end;
+end.

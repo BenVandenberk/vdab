@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Product&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var arr, arr2, arrProduct: array[0..4] of integer&#34;,&#34;var teller: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Randomize&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<call text="&#34;VulArrayMetRandomIntegers(arr, 1, 9)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+		<call text="&#34;VulArrayMetRandomIntegers(arr2, 1, 9)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+		<for text="&#34;For teller := 0 To LENGTH(arr) - 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;arrProduct[teller] := arr[teller] * arr2[teller]&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<call text="&#34;SchrijfArray(arr)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+		<call text="&#34;SchrijfArray(arr2)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+		<call text="&#34;SchrijfArray(arrProduct)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

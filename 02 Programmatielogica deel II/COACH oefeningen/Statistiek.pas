@@ -1,0 +1,96 @@
+program Statistiek;
+
+var aantal, teller: integer;
+var lengtes: array of real;
+var gemiddelde, standaardAfwijking: real;
+var aantalEenSigma, aantalTweeSigma, aantalBuiten: integer;
+
+function LeesReal(boodschap: string; moetPositiefZijn: boolean): real;
+
+var gelezenString: string;
+var code: integer;
+
+begin
+
+  writeln(boodschap);
+  readln(gelezenString);
+  VAL(gelezenString, LeesReal, code);
+  while (code <> 0) OR ( moetPositiefZijn AND (LeesReal < 0) ) do
+  begin
+    writeln('Ongeldige waarde');
+    writeln(boodschap);
+    readln(gelezenString);
+    VAL(gelezenString, LeesReal, code);
+  end;
+end;
+
+begin
+  SETLENGTH(lengtes, 5);
+  aantal := 0;
+  gemiddelde := 0;
+  standaardAfwijking := 0;
+  aantalEenSigma := 0;
+  aantalTweeSigma := 0;
+  aantalBuiten := 0;
+  lengtes[aantal] := LeesReal('Geef een lengte (0 om te stoppen):', true);
+  while (lengtes[aantal] > 0) do
+  begin
+    aantal := aantal + 1;
+    if (aantal > LENGTH(lengtes) - 1) then
+    begin
+      SETLENGTH(lengtes, LENGTH(lengtes) * 2);
+    end;
+    lengtes[aantal] := LeesReal('Geef een lengte (0 om te stoppen):', true);
+  end;
+  // Gemiddelde berekenen;
+  for teller := 0 to aantal - 1 do
+  begin
+    gemiddelde := gemiddelde + lengtes[teller];
+  end;
+  if (aantal > 0) then
+  begin
+    gemiddelde := gemiddelde / aantal;
+    // Standaardafwijking berekenen;
+    for teller := 0 to aantal - 1 do
+    begin
+      standaardAfwijking := standaardAfwijking + SQR(lengtes[teller] - gemiddelde);
+    end;
+    standaardAfwijking := SQRT(standaardAfwijking / aantal);
+    // Tellen lengtes ifv standaardawijking;
+    for teller := 0 to aantal - 1 do
+    begin
+      if (lengtes[teller] = gemiddelde) then
+      begin
+        aantalEenSigma := aantalEenSigma + 1;
+        aantalTweeSigma := aantalTweeSigma + 1;
+      end
+      else
+      begin
+        if (lengtes[teller] > (gemiddelde - standaardAfwijking)) AND (lengtes[teller] < (gemiddelde + standaardAfwijking)) then
+        begin
+          aantalEenSigma := aantalEenSigma + 1;
+          aantalTweeSigma := aantalTweeSigma + 1;
+        end
+        else
+        begin
+          if (lengtes[teller] > (gemiddelde - 2 * standaardAfwijking)) AND (lengtes[teller] < (gemiddelde +  2 * standaardAfwijking)) then
+          begin
+            aantalTweeSigma := aantalTweeSigma + 1;
+          end
+          else
+          begin
+            aantalBuiten := aantalBuiten + 1;
+          end;
+        end;
+      end;
+    end;
+  end;
+  writeln('Gemiddelde : ', gemiddelde:0:2);
+  writeln('Standaardafwijking : ', standaardAfwijking:0:2);
+  writeln('Aantal lengtes binnen eenmaal de standaardafwijking van het gemiddelde : ', aantalEenSigma);
+  writeln('Aantal lengtes binnen tweemaal de standaardafwijking van het gemiddelde : ', aantalTweeSigma);
+  writeln('Aantal lengtes buiten het bereik : ', aantalBuiten);
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen.');
+  readln();
+end.

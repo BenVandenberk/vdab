@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Temperaturen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var arrTemperaturen: array[0..2,0..6] of real&#34;,&#34;var arrDagGemiddelden: array[0..6] of real&#34;,&#34;var dagen: array[0..6] of string&#34;,&#34;var weekGemiddelde: real&#34;,&#34;var dag: integer&#34;,&#34;var ochtendTemp, middagTemp, avondTemp: real&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write '************ TEMPERATUREN ************'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;dagen[0] := 'Maandag'&#34;,&#34;dagen[1] := 'Dinsdag'&#34;,&#34;dagen[2] := 'Woensdag'&#34;,&#34;dagen[3] := 'Donderdag'&#34;,&#34;dagen[4] := 'Vrijdag'&#34;,&#34;dagen[5] := 'Zaterdag'&#34;,&#34;dagen[6] := 'Zondag'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;weekGemiddelde := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For dag := 0 To 6&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;Write 'Geef de ochtend-, middag- en avondtemperatuur voor ', dagen[dag], ' (bv 12.3 17 14.2)'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read ochtendTemp, middagTemp, avondTemp&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;arrTemperaturen[0, dag] := ochtendTemp&#34;,&#34;arrTemperaturen[1, dag] := middagTemp&#34;,&#34;arrTemperaturen[2, dag] := avondTemp&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;arrDagGemiddelden[dag] := (ochtendTemp + middagTemp + avondTemp) / 3&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;weekGemiddelde := weekGemiddelde + arrDagGemiddelden[dag]&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;weekGemiddelde := weekGemiddelde / 7&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For dag := 0 To 6&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;Write 'De gemiddelde temperatuur op ', dagen[dag], ' was ', arrDagGemiddelden[dag]:0:2, ' graden'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write 'De gemiddelde weektemperatuur was ', weekGemiddelde:0:2, ' graden'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="LettersTellenInEenZin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="7" Y="7"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory HistoryIndex="-1"/>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="4">
+      <Item1>
+        <Expression Value="BevatEenWoord"/>
+      </Item1>
+      <Item3>
+        <Expression Value="pStartIndex"/>
+      </Item3>
+      <Item4>
+        <Expression Value="pTekenReeks"/>
+      </Item4>
+    </Watches>
+  </Debugging>
+</CONFIG>

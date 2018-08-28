@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="LettersTellenInEenZin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos Y="8"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory HistoryIndex="-1"/>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="LettersTellenInEenZin.pas"/>
+        <Line Value="8"/>
+      </Item1>
+    </BreakPoints>
+    <Watches Count="4">
+      <Item1>
+        <Expression Value="BevatEenWoord"/>
+      </Item1>
+      <Item3>
+        <Expression Value="pStartIndex"/>
+      </Item3>
+      <Item4>
+        <Expression Value="pTekenReeks"/>
+      </Item4>
+    </Watches>
+  </Debugging>
+</CONFIG>

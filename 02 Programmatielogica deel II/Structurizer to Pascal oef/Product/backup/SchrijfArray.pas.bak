@@ -1,0 +1,12 @@
+function SchrijfArray(arr: array of integer);
+
+// declare your variables here
+
+begin
+  var teller: integer;
+  for teller := 0 to LENGTH(arr) - 1 do
+  begin
+    writeln(arr[teller]);
+  end;
+  writeln();
+end.

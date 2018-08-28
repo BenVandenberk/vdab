@@ -1,0 +1,27 @@
+program BestandMaken;
+
+var f: text;
+var naam, woord: string;
+
+begin
+  writeln('Geef de bestandsnaam voor de woordenlijst');
+  readln(naam);
+  ASSIGN(f, naam);
+  REWRITE(f);
+  writeln('Typ de woorden in. "S" is stoppen.');
+  writeln('Nederlands:');
+  readln(woord);
+  while (woord <> 'S') AND (woord <> 's') do
+  begin
+    writeln(f, woord);
+    writeln('Vertaling');
+    readln(woord);
+    writeln(f, woord);
+    writeln('Nederlands:');
+    readln(woord);
+  end;
+  CLOSE(f);
+  writeln();
+  writeln('Druk op <ENTER> om het programma te verlaten');
+  readln();
+end.

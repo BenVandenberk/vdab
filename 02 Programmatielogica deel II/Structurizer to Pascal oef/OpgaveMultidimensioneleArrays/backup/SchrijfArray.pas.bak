@@ -1,0 +1,17 @@
+function SchrijfArray(pArr: tweeDim);
+
+// declare your variables here
+
+begin
+  var rij, kolom: integer;
+  writeln();
+  for rij := 0 to 9 do
+  begin
+    for kolom := 0 to 9 do
+    begin
+      writeln(pArr[rij, kolom], ' ');
+    end;
+    writeln();
+  end;
+  writeln();
+end.

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="23"/>
+        <CursorPos X="64" Y="47"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="BevatEenWoord.pas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="10"/>
+      </Position1>
+      <Position2>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="11"/>
+      </Position2>
+      <Position3>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="12"/>
+      </Position3>
+      <Position4>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="16"/>
+      </Position4>
+      <Position5>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="18" TopLine="4"/>
+      </Position5>
+      <Position6>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="20" TopLine="4"/>
+      </Position6>
+      <Position7>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="21" TopLine="4"/>
+      </Position7>
+      <Position8>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="20" TopLine="4"/>
+      </Position8>
+      <Position9>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="21" TopLine="4"/>
+      </Position9>
+      <Position10>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="20" TopLine="4"/>
+      </Position10>
+      <Position11>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="21" TopLine="4"/>
+      </Position11>
+      <Position12>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="24" TopLine="4"/>
+      </Position12>
+      <Position13>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="11" TopLine="5"/>
+      </Position13>
+      <Position14>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="12" TopLine="5"/>
+      </Position14>
+      <Position15>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="16" TopLine="5"/>
+      </Position15>
+      <Position16>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="18" TopLine="5"/>
+      </Position16>
+      <Position17>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="20" TopLine="5"/>
+      </Position17>
+      <Position18>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="21" TopLine="5"/>
+      </Position18>
+      <Position19>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="20" TopLine="5"/>
+      </Position19>
+      <Position20>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="21" TopLine="5"/>
+      </Position20>
+      <Position21>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="20" TopLine="5"/>
+      </Position21>
+      <Position22>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="21" TopLine="5"/>
+      </Position22>
+      <Position23>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="24" TopLine="5"/>
+      </Position23>
+      <Position24>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="40" TopLine="24"/>
+      </Position24>
+      <Position25>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="42" TopLine="24"/>
+      </Position25>
+      <Position26>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="43" TopLine="24"/>
+      </Position26>
+      <Position27>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="39" TopLine="24"/>
+      </Position27>
+      <Position28>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="10"/>
+      </Position28>
+      <Position29>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="14" Column="11"/>
+      </Position29>
+      <Position30>
+        <Filename Value="AantalWoordenInEenZin.pas"/>
+        <Caret Line="6"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="4">
+      <Item1>
+        <Expression Value="BevatEenWoord"/>
+      </Item1>
+      <Item3>
+        <Expression Value="pStartIndex"/>
+      </Item3>
+      <Item4>
+        <Expression Value="pTekenReeks"/>
+      </Item4>
+    </Watches>
+  </Debugging>
+</CONFIG>

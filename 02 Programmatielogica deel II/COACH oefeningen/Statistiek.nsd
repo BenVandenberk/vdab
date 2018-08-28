@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Statistiek&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var aantal, teller: integer&#34;,&#34;var lengtes: array of real&#34;,&#34;var gemiddelde, standaardAfwijking: real&#34;,&#34;var aantalEenSigma, aantalTweeSigma, aantalBuiten: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;SETLENGTH(lengtes, 5)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;aantal := 0&#34;,&#34;gemiddelde := 0&#34;,&#34;standaardAfwijking := 0&#34;,&#34;aantalEenSigma := 0&#34;,&#34;aantalTweeSigma := 0&#34;,&#34;aantalBuiten := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;lengtes[aantal] := LeesReal('Geef een lengte (0 om te stoppen):', true)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While lengtes[aantal] &#62; 0&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;aantal := aantal + 1&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;aantal &#62; LENGTH(lengtes) - 1&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;SETLENGTH(lengtes, LENGTH(lengtes) * 2)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;lengtes[aantal] := LeesReal('Geef een lengte (0 om te stoppen):', true)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;// Gemiddelde berekenen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For teller := 0 To aantal - 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;gemiddelde := gemiddelde + lengtes[teller]&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<alternative text="&#34;aantal &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;gemiddelde := gemiddelde / aantal&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;// Standaardafwijking berekenen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For teller := 0 To aantal - 1&#34;" comment="&#34;&#34;" color="ffffff">
+					<qFor>
+						<instruction text="&#34;standaardAfwijking := standaardAfwijking + SQR(lengtes[teller] - gemiddelde)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;standaardAfwijking := SQRT(standaardAfwijking / aantal)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;// Tellen lengtes ifv standaardawijking&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For teller := 0 To aantal - 1&#34;" comment="" color="ffffff">
+					<qFor>
+						<alternative text="&#34;lengtes[teller] = gemiddelde&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;aantalEenSigma := aantalEenSigma + 1&#34;,&#34;aantalTweeSigma := aantalTweeSigma + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<alternative text="&#34;(lengtes[teller] &#62; (gemiddelde - standaardAfwijking)) AND (lengtes[teller] &#60; (gemiddelde + standaardAfwijking))&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;aantalEenSigma := aantalEenSigma + 1&#34;,&#34;aantalTweeSigma := aantalTweeSigma + 1&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+										<alternative text="&#34;(lengtes[teller] &#62; (gemiddelde - 2 * standaardAfwijking)) AND (lengtes[teller] &#60; (gemiddelde +  2 * standaardAfwijking))&#34;" comment="&#34;&#34;" color="ffffff">
+											<qTrue>
+												<instruction text="&#34;aantalTweeSigma := aantalTweeSigma + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+											</qTrue>
+											<qFalse>
+												<instruction text="&#34;aantalBuiten := aantalBuiten + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+											</qFalse>
+										</alternative>
+									</qFalse>
+								</alternative>
+							</qFalse>
+						</alternative>
+					</qFor>
+				</for>
+			</qTrue>
+			<qFalse>
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;Write 'Gemiddelde : ', gemiddelde:0:2&#34;,&#34;Write 'Standaardafwijking : ', standaardAfwijking:0:2&#34;,&#34;Write 'Aantal lengtes binnen eenmaal de standaardafwijking van het gemiddelde : ', aantalEenSigma&#34;,&#34;Write 'Aantal lengtes binnen tweemaal de standaardafwijking van het gemiddelde : ', aantalTweeSigma&#34;,&#34;Write 'Aantal lengtes buiten het bereik : ', aantalBuiten&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen.'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;IntToChar(getal: integer): char&#34;" comment="&#34;&#34;" color="ffffff" type="sub" style="nice">
+	<children>
+		<alternative text="&#34;getal = 0&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;IntToChar := ' '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;IntToChar := CHR(getal + 96)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFalse>
+		</alternative>
+	</children>
+</root>

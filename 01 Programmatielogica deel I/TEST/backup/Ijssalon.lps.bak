@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="5">
+      <Unit0>
+        <Filename Value="Ijssalon.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="33"/>
+        <CursorPos X="10" Y="47"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="LeesAantalBollen.pas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="LeesExtraatje.pas"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="LeesSoortIjs.pas"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Separator.pas"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="10"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit4>
+    </Units>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="Ijssalon.pas"/>
+        <Caret Line="55" Column="10" TopLine="96"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Ijssalon.pas"/>
+        <Caret Line="45" Column="5" TopLine="28"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Ijssalon.pas"/>
+        <Caret Line="114" Column="55" TopLine="99"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Ijssalon.pas"/>
+        <Caret Line="57" Column="7" TopLine="42"/>
+      </Position4>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="1"/>
+  </Debugging>
+</CONFIG>

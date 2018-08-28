@@ -1,0 +1,44 @@
+program Gecombineerd;
+
+// declare your variables here
+
+begin
+  var BESTANDSNAAM: string;
+  var naam: string;
+  var leeftijd, aantal: integer;
+  var gemiddeldeLeeftijd: real;
+  var f: text;
+  BESTANDSNAAM := 'personen.txt';
+  gemiddeldeLeeftijd := 0;
+  aantal := 0;
+  ASSIGN(f, BESTANDSNAAM);
+  REWRITE(f);
+  writeln('Naam ("S" om te stoppen) : ');
+  readln(naam);
+  while (naam <> 'S') AND (naam <> 's') do
+  begin
+    leeftijd := LeesInteger('Leeftijd : ', true);
+    writeln(f, naam);
+    writeln(f, leeftijd);
+    writeln('Naam ("S" om te stoppen) : ');
+    readln(naam);
+  end;
+  RESET(f);
+  while NOT EOF(f) do
+  begin
+    readln(f);
+    readln(f, leeftijd);
+    gemiddeldeLeeftijd := gemiddeldeLeeftijd + leeftijd;
+    aantal := aantal + 1;
+  end;
+  CLOSE(f);
+  if (aantal > 0) then
+  begin
+    gemiddeldeLeeftijd := gemiddeldeLeeftijd / aantal;
+  end;
+  writeln('Aantal mensen':20, 'Gemiddelde leeftijd':20);
+  writeln(aantal:20, gemiddeldeLeeftijd:20:2);
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen');
+  readln();
+end.

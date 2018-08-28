@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;CoderenEnDecoderen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var sleutelWoord, teVerwerken: string&#34;,&#34;var teller, resulterendNummer: integer&#34;,&#34;var menuKeuze: char&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;sleutelWoord := 'vpw'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Coderen(1) of decoderen(2)?'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read menuKeuze&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While (menuKeuze &#60;&#62; '1') AND (menuKeuze &#60;&#62; '2')&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Write 'Ongeldige keuze'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Coderen(1) of decoderen(2)?'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read menuKeuze&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<case text="&#34;menuKeuze&#34;,&#34;'1'&#34;,&#34;'2'&#34;" comment="&#34;&#34;" color="ffffff">
+			<qCase>
+				<instruction text="&#34;Write 'Geef het te coderen woord:'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read teVerwerken&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For teller := 1 To LENGTH(teVerwerken)&#34;" comment="&#34;&#34;" color="ffffff">
+					<qFor>
+						<instruction text="&#34;resulterendNummer := ChartoInt(teVerwerken[teller]) + ChartoInt(sleutelWoord[( (teller - 1) MOD LENGTH(sleutelWoord) ) + 1])&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;resulterendNummer := resulterendNummer MOD 27&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;Write IntToChar(resulterendNummer)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+			</qCase>
+			<qCase>
+				<instruction text="&#34;Write 'Geef het te decoderen woord:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read teVerwerken&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For teller := 1 To LENGTH(teVerwerken)&#34;" comment="" color="ffffff">
+					<qFor>
+						<instruction text="&#34;resulterendNummer := ChartoInt(teVerwerken[teller]) - ChartoInt(sleutelWoord[( (teller - 1) MOD LENGTH(sleutelWoord) ) + 1])&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;resulterendNummer &#60; 0&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;resulterendNummer := ABS(resulterendNummer)&#34;,&#34;resulterendNummer := 27 - resulterendNummer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+						<instruction text="&#34;Write IntToChar(resulterendNummer)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+			</qCase>
+		</case>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om  het programma te stoppen.'&#34;,&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

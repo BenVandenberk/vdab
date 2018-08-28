@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Gecombineerd&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var BESTANDSNAAM: string&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var naam: string&#34;,&#34;var leeftijd, aantal: integer&#34;,&#34;var gemiddeldeLeeftijd: real&#34;,&#34;var f: text&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;BESTANDSNAAM := 'personen.txt'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;gemiddeldeLeeftijd := 0&#34;,&#34;aantal := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(f, BESTANDSNAAM)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;REWRITE(f)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Naam (&#34;&#34;S&#34;&#34; om te stoppen) : '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read naam&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While (naam &#60;&#62; 'S') AND (naam &#60;&#62; 's')&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<call text="&#34;leeftijd := LeesInteger('Leeftijd : ', true)&#34;" comment="&#34;&#34;" color="ffffff"></call>
+				<instruction text="&#34;Write f, naam&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write f, leeftijd&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Naam (&#34;&#34;S&#34;&#34; om te stoppen) : '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read naam&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;RESET(f)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While NOT EOF(f)&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Read f&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read f, leeftijd&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;gemiddeldeLeeftijd := gemiddeldeLeeftijd + leeftijd&#34;,&#34;aantal := aantal + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;CLOSE(f)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<alternative text="&#34;aantal &#62; 0&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;gemiddeldeLeeftijd := gemiddeldeLeeftijd / aantal&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;Write 'Aantal mensen':20, 'Gemiddelde leeftijd':20&#34;,&#34;Write aantal:20, gemiddeldeLeeftijd:20:2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>
