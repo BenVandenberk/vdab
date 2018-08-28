@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Wiki2&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var oudeBestandsnaam, nieuweBestandsnaam: string&#34;,&#34;var f, g: text&#34;,&#34;var lijn, wiki, antwoord: string&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef de originele bestandsnaam'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read oudeBestandsnaam&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(f, oudeBestandsnaam)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef de nieuwe bestandsnaam'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read nieuweBestandsnaam&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(g, nieuweBestandsnaam)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;RESET(f)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;REWRITE(g)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While NOT EOF(f)&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Read f, lijn&#34;,&#34;Write g, lijn&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;CLOSE(f)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;antwoord := '1'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While antwoord &#60;&#62; '0'&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Write 'Naam van de wiki : '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read wiki&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Omschrijving van de wiki : '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read lijn&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write g, wiki&#34;,&#34;Write g, lijn&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Druk op &#60;ENTER&#62; om nog een record toe te voegen. 0 om te stoppen'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read antwoord&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;CLOSE(g)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen'&#34;,&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

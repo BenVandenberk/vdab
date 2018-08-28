@@ -1,0 +1,35 @@
+program HuisdierenInlezen;
+
+// declare your variables here
+
+begin
+  {$mode objfpc};
+  TYPE huisdier=RECORD;
+  naam, ras: string;
+  leeftijd: integer;
+  gewicht: real;
+  end;
+  var bestandsnaam: string;
+  var dier: huisdier;
+  var f: file of huisdier;
+  writeln('Geef de bestandsnaam in:');
+  readln(bestandsnaam);
+  ASSIGN(f, bestandsnaam);
+  REWRITE(f);
+  writeln('Geef de naam van het huisdier ("stop" om te stopppen) : ');
+  readln(dier.naam);
+  while (dier.naam <> 'stop') AND (dier.naam <> 'STOP') do
+  begin
+    writeln('Geeft het ras : ');
+    readln(dier.ras);
+    dier.leeftijd := LeesInteger('Geef de leeftijd : ', true);
+    dier.gewicht := LeesReal('Geef het gewicht in kg : ', true);
+    writeln(f, dier);
+    writeln('Geef de naam van het huisdier ("stop" om te stopppen) : ');
+    readln(dier.naam);
+  end;
+  CLOSE(f);
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen');
+  readln();
+end.

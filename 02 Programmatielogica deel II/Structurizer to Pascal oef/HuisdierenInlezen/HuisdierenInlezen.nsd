@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;HuisdierenInlezen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;{$mode objfpc}&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;TYPE huisdier=RECORD&#34;,&#34;naam, ras: string&#34;,&#34;leeftijd: integer&#34;,&#34;gewicht: real&#34;,&#34;end&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var bestandsnaam: string&#34;,&#34;var dier: huisdier&#34;,&#34;var f: file of huisdier&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef de bestandsnaam in:'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read bestandsnaam&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(f, bestandsnaam)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;REWRITE(f)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef de naam van het huisdier (&#34;&#34;stop&#34;&#34; om te stopppen) : '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read dier.naam&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While (dier.naam &#60;&#62; 'stop') AND (dier.naam &#60;&#62; 'STOP')&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Write 'Geeft het ras : '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read dier.ras&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;dier.leeftijd := LeesInteger('Geef de leeftijd : ', true)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;dier.gewicht := LeesReal('Geef het gewicht in kg : ', true)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write f, dier&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Write 'Geef de naam van het huisdier (&#34;&#34;stop&#34;&#34; om te stopppen) : '&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Read dier.naam&#34;" comment="" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;CLOSE(f)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>
