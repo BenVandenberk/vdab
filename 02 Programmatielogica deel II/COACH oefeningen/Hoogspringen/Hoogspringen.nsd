@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;Hoogspringen&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;{$mode objfpc}&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;TYPE springer=RECORD&#34;,&#34;nummer: integer&#34;,&#34;naam: string&#34;,&#34;categorie: char&#34;,&#34;end&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;TYPE sprong=RECORD&#34;,&#34;nummer, sprong: integer&#34;,&#34;end&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var FILE_SPRINGERS, FILE_SPRONGEN: string&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var arrSpringers: array[0..14] of springer&#34;,&#34;var arrSprongen: array of sprong&#34;,&#34;var huidigeSpringer: springer&#34;,&#34;var huidigeSprong: sprong&#34;,&#34;var f: file of springer&#34;,&#34;var g: file of sprong&#34;,&#34;var aantalSpringers, aantalSprongen: integer&#34;,&#34;var springerTeller, sprongTeller, teller: integer&#34;,&#34;var hoogsteSprong, aantalSpringerSprongen: integer&#34;,&#34;var isGekendeSpringer: boolean&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;FILE_SPRINGERS := 'springers.txt'&#34;,&#34;FILE_SPRONGEN := 'sprongen.txt'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;aantalSpringers := 0&#34;,&#34;aantalSprongen := 0&#34;,&#34;SETLENGTH(arrSprongen, 15)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(f, FILE_SPRINGERS)&#34;,&#34;RESET(f)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While NOT EOF(f)&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Read f, huidigeSpringer&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;(huidigeSpringer.categorie &#60; 'A') OR (huidigeSpringer.categorie &#62; 'E')&#34;" comment="" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write 'Foutieve categorie:', huidigeSpringer.nummer:5, huidigeSpringer.naam:15, huidigeSpringer.categorie:5&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;arrSpringers[aantalSpringers] := huidigeSpringer&#34;,&#34;aantalSpringers := aantalSpringers + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFalse>
+				</alternative>
+			</qWhile>
+		</while>
+		<instruction text="&#34;CLOSE(f)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(g, FILE_SPRONGEN)&#34;,&#34;RESET(g)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While NOT EOF(g)&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Read g, huidigeSprong&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;(huidigeSprong.sprong &#60;&#62; 0) AND (huidigeSprong.sprong &#60;= 80)&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write 'Foutieve sprong', huidigeSprong.nummer:5, huidigeSprong.sprong:5&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;arrSprongen[aantalSprongen] := huidigeSprong&#34;,&#34;aantalSprongen := aantalSprongen + 1&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;aantalSprongen &#62; LENGTH(arrSprongen) - 1&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;SETLENGTH(arrSprongen, LENGTH(arrSprongen) * 2)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+					</qFalse>
+				</alternative>
+			</qWhile>
+		</while>
+		<instruction text="&#34;CLOSE(g)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;// Foutieve springers&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For sprongTeller := 0 To aantalSprongen - 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;isGekendeSpringer := false&#34;,&#34;springerTeller := 0&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<while text="&#34;While (NOT isGekendeSpringer) AND (springerTeller &#60; aantalSpringers)&#34;" comment="" color="ffffff">
+					<qWhile>
+						<instruction text="&#34;isGekendeSpringer := arrSpringers[springerTeller].nummer = arrSprongen[sprongTeller].nummer&#34;,&#34;springerTeller := springerTeller + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qWhile>
+				</while>
+				<alternative text="&#34;NOT isGekendeSpringer&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write 'Foutieve springer:', arrSprongen[sprongTeller].nummer:5, arrSprongen[sprongTeller].sprong:5&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+			</qFor>
+		</for>
+		<instruction text="&#34;// Teveel sprongen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For springerTeller := 0 To aantalSpringers - 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;aantalSpringerSprongen := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For sprongTeller := 0 To aantalSprongen - 1&#34;" comment="&#34;&#34;" color="ffffff">
+					<qFor>
+						<alternative text="&#34;arrSpringers[springerTeller].nummer = arrSprongen[sprongTeller].nummer&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;aantalSpringerSprongen := aantalSpringerSprongen + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<alternative text="&#34;aantalSpringerSprongen &#62; 3&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;Write 'Teveel sprongen:', arrSprongen[sprongTeller].nummer:7, arrSprongen[sprongTeller].sprong:5&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+									</qFalse>
+								</alternative>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+					</qFor>
+				</for>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;,&#34;Write 'nummer':9, 'categorie':18, 'naam':12, '1':12, '2':12, '3':12, 'hoogste':15&#34;,&#34;Separator('-', 90)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For springerTeller := 0 To aantalSpringers - 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;Write arrSpringers[springerTeller].nummer:12, arrSpringers[springerTeller].categorie:12, arrSpringers[springerTeller].naam:15&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;hoogsteSprong := 0&#34;,&#34;aantalSpringerSprongen := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For sprongTeller := 0 To aantalSprongen - 1&#34;" comment="&#34;&#34;" color="ffffff">
+					<qFor>
+						<alternative text="&#34;arrSpringers[springerTeller].nummer = arrSprongen[sprongTeller].nummer&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;aantalSpringerSprongen := aantalSpringerSprongen + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<alternative text="&#34;aantalSpringerSprongen &#60;= 3&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;Write arrSprongen[sprongTeller].sprong:12&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+									</qFalse>
+								</alternative>
+								<alternative text="&#34;arrSprongen[sprongTeller].sprong &#62; hoogsteSprong&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;hoogsteSprong := arrSprongen[sprongTeller].sprong&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+									</qFalse>
+								</alternative>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+					</qFor>
+				</for>
+				<for text="&#34;For teller := aantalSpringerSprongen To 2&#34;" comment="&#34;&#34;" color="ffffff">
+					<qFor>
+						<instruction text="&#34;Write '':12&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;Write hoogsteSprong:12&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;Separator('-', 90)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen'&#34;,&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;PickingLijst2&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;{$mode objfpc}&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;TYPE orderdetail=RECORD&#34;,&#34;klantnr, artikelnr, ordernr, aantal, prijs: integer&#34;,&#34;end&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var bestandsnaam: string&#34;,&#34;var f: file of orderdetail&#34;,&#34;var huidigOrder, vorigOrder: orderdetail&#34;,&#34;var totAantalKlant, totBedragKlant: integer&#34;,&#34;var totAantalArtikel, totBedragArtikel: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write 'Geef de bestandsnaam:'&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read bestandsnaam&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(f, bestandsnaam)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;RESET(f)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Read f, huidigOrder&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While NOT EOF(f)&#34;" comment="" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Write 'Klantnr', 'Artikelnr':12, 'Aantal':9, 'TotaalBedrag':14&#34;,&#34;Write huidigOrder.klantnr&#34;,&#34;Separator('-', 48)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;totAantalKlant := 0&#34;,&#34;totBedragKlant := 0&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<repeat text="&#34;Until huidigOrder.klantnr &#60;&#62; vorigOrder.klantnr&#34;" comment="" color="ffffff">
+					<qRepeat>
+						<instruction text="&#34;totAantalArtikel := 0&#34;,&#34;totBedragArtikel := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<repeat text="&#34;Until huidigOrder.artikelnr &#60;&#62; vorigOrder.artikelnr&#34;" comment="" color="ffffff">
+							<qRepeat>
+								<instruction text="&#34;totAantalArtikel := totAantalArtikel + huidigOrder.aantal&#34;,&#34;totBedragArtikel := totBedragArtikel + huidigOrder.aantal * huidigOrder.prijs&#34;" comment="" color="ffffff" rotated="0"></instruction>
+								<instruction text="&#34;vorigOrder := huidigOrder&#34;" comment="" color="ffffff" rotated="0"></instruction>
+								<alternative text="&#34;NOT EOF(f)&#34;" comment="" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;Read f, huidigOrder&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+										<instruction text="&#34;vorigOrder.klantnr := 0&#34;,&#34;vorigOrder.artikelnr :=0&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qFalse>
+								</alternative>
+							</qRepeat>
+						</repeat>
+						<instruction text="&#34;Write vorigOrder.artikelnr:13, totAantalArtikel:12, totBedragArtikel:12&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<instruction text="&#34;totAantalKlant := totAantalKlant + totAantalArtikel&#34;,&#34;totBedragKlant := totBedragKlant + totBedragArtikel&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qRepeat>
+				</repeat>
+				<instruction text="&#34;Separator('-', 48)&#34;,&#34;Write 'Totaal klant', totAantalKlant:13, totBedragKlant:12&#34;,&#34;Separator('=', 48)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qWhile>
+		</while>
+		<instruction text="&#34;CLOSE(f)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen'&#34;,&#34;Read&#34;" comment="" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="Hoogspringen.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="117"/>
+        <CursorPos X="46" Y="134"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="Separator.pas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="7" HistoryIndex="6">
+      <Position1>
+        <Filename Value="Hoogspringen.pas"/>
+        <Caret Line="28" Column="9" TopLine="13"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Hoogspringen.pas"/>
+        <Caret Line="47" Column="9" TopLine="46"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Hoogspringen.pas"/>
+        <Caret Line="48" Column="61" TopLine="34"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Hoogspringen.pas"/>
+        <Caret Line="56" Column="25" TopLine="42"/>
+      </Position4>
+      <Position5>
+        <Filename Value="Hoogspringen.pas"/>
+        <Caret Line="23" TopLine="6"/>
+      </Position5>
+      <Position6>
+        <Filename Value="Hoogspringen.pas"/>
+        <Caret Line="87" Column="23" TopLine="73"/>
+      </Position6>
+      <Position7>
+        <Filename Value="Hoogspringen.pas"/>
+        <Caret Line="107" TopLine="85"/>
+      </Position7>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="1">
+      <Item1>
+        <Expression Value="arrSprongen"/>
+      </Item1>
+    </Watches>
+  </Debugging>
+</CONFIG>

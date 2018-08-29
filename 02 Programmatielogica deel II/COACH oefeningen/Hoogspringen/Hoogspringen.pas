@@ -1,0 +1,144 @@
+program Hoogspringen;
+
+{$mode objfpc}
+TYPE springer=RECORD
+nummer: integer;
+naam: string;
+categorie: char;
+end;
+TYPE sprong=RECORD
+nummer, sprong: integer;
+end;
+var FILE_SPRINGERS, FILE_SPRONGEN: string;
+var arrSpringers: array[0..14] of springer;
+var arrSprongen: array of sprong;
+var huidigeSpringer: springer;
+var huidigeSprong: sprong;
+var f: file of springer;
+var g: file of sprong;
+var aantalSpringers, aantalSprongen: integer;
+var springerTeller, sprongTeller, teller: integer;
+var hoogsteSprong, aantalSpringerSprongen: integer;
+var isGekendeSpringer: boolean;
+
+  procedure Separator(pSoortKarakter: char; pAantalTekens: integer);
+
+var teller: integer;
+
+begin
+  for teller := 1 to pAantalTekens do
+  begin
+    write(pSoortKarakter);
+  end;
+  writeln();
+end;
+
+begin
+  FILE_SPRINGERS := 'springers.txt';
+  FILE_SPRONGEN := 'sprongen.txt';
+  aantalSpringers := 0;
+  aantalSprongen := 0;
+  SETLENGTH(arrSprongen, 15);
+  ASSIGN(f, FILE_SPRINGERS);
+  RESET(f);
+  while NOT EOF(f) do
+  begin
+    read(f, huidigeSpringer);
+    if (huidigeSpringer.categorie < 'A') OR (huidigeSpringer.categorie > 'E') then
+    begin
+      writeln('Foutieve categorie:', huidigeSpringer.nummer:5, huidigeSpringer.naam:15, huidigeSpringer.categorie:5);
+    end
+    else
+    begin
+      arrSpringers[aantalSpringers] := huidigeSpringer;
+      aantalSpringers := aantalSpringers + 1;
+    end;
+  end;
+  CLOSE(f);
+  ASSIGN(g, FILE_SPRONGEN);
+  RESET(g);
+  writeln();
+  while NOT EOF(g) do
+  begin
+    read(g, huidigeSprong);
+    if (huidigeSprong.sprong <> 0) AND (huidigeSprong.sprong <= 80) then
+    begin
+      writeln('Foutieve sprong', huidigeSprong.nummer:5, huidigeSprong.sprong:5);
+    end
+    else
+    begin
+      arrSprongen[aantalSprongen] := huidigeSprong;
+      aantalSprongen := aantalSprongen + 1;
+      if (aantalSprongen > LENGTH(arrSprongen) - 1) then
+      begin
+        SETLENGTH(arrSprongen, LENGTH(arrSprongen) * 2);
+      end;
+    end;
+  end;
+  CLOSE(g);
+  // Foutieve springers;
+  writeln();
+  for sprongTeller := 0 to aantalSprongen - 1 do
+  begin
+    isGekendeSpringer := false;
+    springerTeller := 0;
+    while (NOT isGekendeSpringer) AND (springerTeller < aantalSpringers) do
+    begin
+      isGekendeSpringer := arrSpringers[springerTeller].nummer = arrSprongen[sprongTeller].nummer;
+      springerTeller := springerTeller + 1;
+    end;
+    if (NOT isGekendeSpringer) then
+    begin
+      writeln('Foutieve springer:', arrSprongen[sprongTeller].nummer:5, arrSprongen[sprongTeller].sprong:5);
+    end;
+  end;
+  // Teveel sprongen;
+  for springerTeller := 0 to aantalSpringers - 1 do
+  begin
+    aantalSpringerSprongen := 0;
+    for sprongTeller := 0 to aantalSprongen - 1 do
+    begin
+      if (arrSpringers[springerTeller].nummer = arrSprongen[sprongTeller].nummer) then
+      begin
+        aantalSpringerSprongen := aantalSpringerSprongen + 1;
+        if (aantalSpringerSprongen > 3) then
+        begin
+          writeln('Teveel sprongen:', arrSprongen[sprongTeller].nummer:7, arrSprongen[sprongTeller].sprong:5);
+        end;
+      end;
+    end;
+  end;
+  writeln();
+  writeln('nummer':9, 'categorie':18, 'naam':12, '1':12, '2':12, '3':12, 'hoogste':15);
+  Separator('-', 90);
+  for springerTeller := 0 to aantalSpringers - 1 do
+  begin
+    write(arrSpringers[springerTeller].nummer:12, arrSpringers[springerTeller].categorie:12, arrSpringers[springerTeller].naam:15);
+    hoogsteSprong := 0;
+    aantalSpringerSprongen := 0;
+    for sprongTeller := 0 to aantalSprongen - 1 do
+    begin
+      if (arrSpringers[springerTeller].nummer = arrSprongen[sprongTeller].nummer) then
+      begin
+        aantalSpringerSprongen := aantalSpringerSprongen + 1;
+        if (aantalSpringerSprongen <= 3) then
+        begin
+          write(arrSprongen[sprongTeller].sprong:12);
+        end;
+        if (arrSprongen[sprongTeller].sprong > hoogsteSprong) then
+        begin
+          hoogsteSprong := arrSprongen[sprongTeller].sprong;
+        end;
+      end;
+    end;
+    for teller := aantalSpringerSprongen to 2 do
+    begin
+      write('':12);
+    end;
+    writeln(hoogsteSprong:12);
+    Separator('-', 90);
+  end;
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen');
+  readln();
+end.

@@ -1,0 +1,9 @@
+wikipedia
+wiktionary
+wikimedia
+wikiquote
+wikibooks
+wikinews
+wikisource
+wikispecies
+commons
