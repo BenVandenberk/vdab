@@ -1,0 +1,38 @@
+program SelectionSortTest;
+
+var arrGetal: array[1..5] of integer = (5, 8, 2, 9, 6);
+var teller: integer;
+
+procedure SelectionSort;
+
+var kleinste, vanaf, temp, teller, indexKleinste: integer;
+
+begin
+  for vanaf := 0 to HIGH(arrGetal) - 1 do
+  begin
+    kleinste := HIGH(integer);
+    for teller := vanaf to HIGH(arrGetal) do
+    begin
+      if (arrGetal[teller] < kleinste) then
+      begin
+        kleinste := arrGetal[teller];
+        indexKleinste := teller;
+      end;
+    end;
+    temp := arrGetal[vanaf];
+    arrGetal[vanaf] := kleinste;
+    arrGetal[indexKleinste] := temp;
+  end;
+end;
+
+begin
+  SelectionSort();
+  for teller := 1 to 5 do
+  begin
+    write(arrGetal[teller], ' ');
+  end;
+
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen');
+  readln();
+end.

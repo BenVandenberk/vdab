@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="5">
+      <Unit0>
+        <Filename Value="machines.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Machines"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="89"/>
+        <CursorPos X="3" Y="109"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="IsGeldigeKwaliteit.pas"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="5" Y="8"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="IsGeldigeMachineCode.pas"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="5" Y="5"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="IsGeldigProductNummer.pas"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="5" Y="8"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="SchrijfResultaatTabel.pas"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="5" Y="21"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit4>
+    </Units>
+    <JumpHistory Count="7" HistoryIndex="6">
+      <Position1>
+        <Filename Value="machines.pas"/>
+        <Caret Line="12" Column="7"/>
+      </Position1>
+      <Position2>
+        <Filename Value="machines.pas"/>
+        <Caret Line="46" Column="9" TopLine="19"/>
+      </Position2>
+      <Position3>
+        <Filename Value="machines.pas"/>
+        <Caret Line="78" Column="9" TopLine="78"/>
+      </Position3>
+      <Position4>
+        <Filename Value="IsGeldigeKwaliteit.pas"/>
+      </Position4>
+      <Position5>
+        <Filename Value="SchrijfResultaatTabel.pas"/>
+      </Position5>
+      <Position6>
+        <Filename Value="IsGeldigeMachineCode.pas"/>
+      </Position6>
+      <Position7>
+        <Filename Value="IsGeldigProductNummer.pas"/>
+      </Position7>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="1">
+      <Item1>
+        <Expression Value="arrSprongen"/>
+      </Item1>
+    </Watches>
+  </Debugging>
+</CONFIG>

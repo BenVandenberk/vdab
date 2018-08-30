@@ -1,0 +1,9 @@
+function IsGeldigProductNummer(pNummer: char; var nummer: integer): boolean;
+
+// declare your variables here
+
+begin
+  var code: word;
+  VAL(pNummer, nummer, code);
+  IsGeldigProductNummer := (code = 0) AND (nummer > 0) AND (nummer < 10);
+end.

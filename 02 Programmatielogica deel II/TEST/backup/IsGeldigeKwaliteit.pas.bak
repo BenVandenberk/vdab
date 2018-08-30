@@ -1,0 +1,9 @@
+function IsGeldigeKwaliteit(pKwaliteit: char; var kwaliteit: integer): boolean;
+
+// declare your variables here
+
+begin
+  var code: word;
+  VAL(pKwaliteit, kwaliteit, code);
+  IsGeldigeKwaliteit := (code = 0) AND (kwaliteit >= 0) AND (kwaliteit <= 1);
+end.

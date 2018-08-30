@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;SelectionSortTest&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;var arrGetal: array[1..5] of integer = (5, 8, 2, 9, 6)&#34;,&#34;var teller: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<call text="&#34;SelectionSort()&#34;" comment="&#34;&#34;" color="ffffff"></call>
+		<for text="&#34;For teller := 1 To 5&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;Write arrGetal[teller], ' '&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

@@ -1,0 +1,22 @@
+function SchrijfResultaatTabel(pArr: TResArr);
+
+// declare your variables here
+
+begin
+  var rij, kolom: integer;
+  writeln('A':10, 'B':5, 'C':5, 'D':5, 'E':5, 'F':5, 'TOT':5);
+  for rij := 1 to 9 do
+  begin
+    writeln(rij:5);
+    for kolom := 1 to 7 do
+    begin
+      writeln(pArr[rij, kolom]:5);
+    end;
+    writeln();
+  end;
+  writeln('TOT':5);
+  for kolom := 1 to 7 do
+  begin
+    writeln(pArr[10, kolom]:5);
+  end;
+end.

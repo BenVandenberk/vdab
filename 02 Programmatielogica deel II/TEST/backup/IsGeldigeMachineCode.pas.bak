@@ -1,0 +1,7 @@
+function IsGeldigeMachineCode(pCode: char): boolean;
+
+// declare your variables here
+
+begin
+  IsGeldigeMachineCode := (ORD(pCode) >= 65) AND (ORD(pCode) <= 70);
+end.
