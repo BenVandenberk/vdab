@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;BtwAangifte&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;{$mode objfpc}&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;USES sysutils&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;TYPE klant=RECORD&#34;,&#34;btwNummer, naam: string&#34;,&#34;end&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;TYPE bewerking=RECORD&#34;,&#34;btwNummer: string&#34;,&#34;aanOfVerkoop: char&#34;,&#34;bedrag: integer&#34;,&#34;end&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var FILE_KLANTEN, FILE_BEWERKINGEN: string&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;var arrKlanten: array of klant&#34;,&#34;var huidigeKlant: klant&#34;,&#34;var aantalKlanten: integer&#34;,&#34;var f: file of klant&#34;,&#34;var arrBewerkingen: array of bewerking&#34;,&#34;var huidigeBewerking: bewerking&#34;,&#34;var aantalBewerkingen: integer&#34;,&#34;var btwNrBestaat: boolean&#34;,&#34;var g: file of bewerking&#34;,&#34;var teller, teller2: integer&#34;,&#34;var totAankoop, totVerkoop: integer&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;FILE_KLANTEN := 'klanten'&#34;,&#34;FILE_BEWERKINGEN := 'bewerkingen'&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;SETLENGTH(arrKlanten, 10)&#34;,&#34;aantalKlanten := 0&#34;,&#34;SETLENGTH(arrBewerkingen, 10)&#34;,&#34;aantalBewerkingen := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(f, FILE_KLANTEN)&#34;,&#34;RESET(f)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While NOT EOF(f)&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Read f, huidigeKlant&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;NOT IsGeldigBtwNummer(huidigeKlant.btwNummer)&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write 'Foutief btw-nummer: ', huidigeKlant.btwNummer, huidigeKlant.naam:35&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;arrKlanten[aantalKlanten] := huidigeKlant&#34;,&#34;aantalKlanten := aantalKlanten + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;aantalKlanten &#62; LENGTH(arrKlanten) - 1&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;SETLENGTH(arrKlanten, LENGTH(arrKlanten) * 2)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+					</qFalse>
+				</alternative>
+			</qWhile>
+		</while>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;CLOSE(f)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ASSIGN(g, FILE_BEWERKINGEN)&#34;,&#34;RESET(g)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<while text="&#34;While NOT EOF(g)&#34;" comment="&#34;&#34;" color="ffffff">
+			<qWhile>
+				<instruction text="&#34;Read g, huidigeBewerking&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;// Komt de BTW-nummer van de bewerking overeen met een van de BTW-nummers van onze klanten?&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;btwNrBestaat := false&#34;,&#34;teller := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<while text="&#34;While (NOT btwNrBestaat) AND (teller &#60; aantalKlanten)&#34;" comment="&#34;&#34;" color="ffffff">
+					<qWhile>
+						<instruction text="&#34;btwNrBestaat := arrKlanten[teller].btwNummer = huidigeBewerking.btwNummer&#34;,&#34;teller := teller + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qWhile>
+				</while>
+				<alternative text="&#34;NOT btwNrBestaat&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write 'Fout btw-nummer  : ', huidigeBewerking.btwNummer, huidigeBewerking.aanOfVerkoop:5, huidigeBewerking.bedrag:5&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;// Is het karakter voor aan- of verkoop correct?&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;(huidigeBewerking.aanOfVerkoop &#60;&#62; 'a') AND (huidigeBewerking.aanOfVerkoop &#60;&#62; 'v')&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<instruction text="&#34;Write 'Foute aan-verkoop: ', huidigeBewerking.btwNummer, huidigeBewerking.aanOfVerkoop:5, huidigeBewerking.bedrag:5&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qTrue>
+							<qFalse>
+								<instruction text="&#34;arrBewerkingen[aantalBewerkingen] := huidigeBewerking&#34;,&#34;aantalBewerkingen := aantalBewerkingen + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+								<alternative text="&#34;aantalBewerkingen &#62; LENGTH(arrBewerkingen) - 1&#34;" comment="&#34;&#34;" color="ffffff">
+									<qTrue>
+										<instruction text="&#34;SETLENGTH(arrBewerkingen, LENGTH(arrBewerkingen) * 2)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+									</qFalse>
+								</alternative>
+							</qFalse>
+						</alternative>
+					</qFalse>
+				</alternative>
+			</qWhile>
+		</while>
+		<instruction text="&#34;CLOSE(g)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;Write&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<for text="&#34;For teller := 0 To aantalKlanten - 1&#34;" comment="&#34;&#34;" color="ffffff">
+			<qFor>
+				<instruction text="&#34;Write arrKlanten[teller].btwNummer, arrKlanten[teller].naam:30&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<instruction text="&#34;totAankoop := 0&#34;,&#34;totVerkoop := 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<for text="&#34;For teller2 := 0 To aantalBewerkingen - 1&#34;" comment="&#34;&#34;" color="ffffff">
+					<qFor>
+						<alternative text="&#34;arrKlanten[teller].btwNummer = arrBewerkingen[teller2].btwNummer&#34;" comment="&#34;&#34;" color="ffffff">
+							<qTrue>
+								<case text="&#34;arrBewerkingen[teller2].aanOfVerkoop&#34;,&#34;'a'&#34;,&#34;'v'&#34;" comment="&#34;&#34;" color="ffffff">
+									<qCase>
+										<instruction text="&#34;totAankoop := totAankoop + arrBewerkingen[teller2].bedrag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+										<instruction text="&#34;totVerkoop := totVerkoop + arrBewerkingen[teller2].bedrag&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+									</qCase>
+								</case>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+					</qFor>
+				</for>
+				<instruction text="&#34;Write totAankoop:8, totVerkoop:8&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+				<alternative text="&#34;totVerkoop &#62; totAankoop&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;Write Concat('(', IntToStr(totVerkoop - totAankoop), ')'):8&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;Write (ABS(totVerkoop - totAankoop)):8&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFalse>
+				</alternative>
+			</qFor>
+		</for>
+		<instruction text="&#34;Write&#34;,&#34;Write 'Druk op &#60;ENTER&#62; om het programma te stoppen'&#34;,&#34;Read&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+	</children>
+</root>

@@ -1,0 +1,12 @@
+function ArrayCharToString(arrChar: ArrayChar): string;
+
+var index: integer;
+
+begin
+
+  ArrayChartoString := '';
+  for index := 0 to HIGH(arrChar) do
+  begin
+    ArrayChartoString := ArrayChartoString + arrChar[teller];
+  end;
+end;

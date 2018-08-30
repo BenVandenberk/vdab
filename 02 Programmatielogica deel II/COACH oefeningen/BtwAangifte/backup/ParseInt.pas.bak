@@ -1,0 +1,9 @@
+function ParseInt(input: string; var getal: integer): boolean;
+
+// declare your variables here
+
+begin
+  var code: word;
+  VAL(input, getal, code);
+  ParseInt := (code = 0);
+end.

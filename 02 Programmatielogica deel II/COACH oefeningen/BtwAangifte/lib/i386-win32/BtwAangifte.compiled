@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.0.0\bin\i386-win32\fpc.exe" Date="1231857874"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq &quot;-FuH:\02 Programmatielogica deel II\COACH oefeningen\BtwAangifte\&quot; &quot;-FUH:\02 Programmatielogica deel II\COACH oefeningen\BtwAangifte\lib\i386-win32\&quot; BtwAangifte.pas"/>
+</CONFIG>

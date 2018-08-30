@@ -1,0 +1,165 @@
+program BtwAangifte;
+
+{$mode objfpc}
+
+USES sysutils;
+
+TYPE klant=RECORD
+btwNummer, naam: string;
+end;
+
+TYPE bewerking=RECORD
+btwNummer: string;
+aanOfVerkoop: char;
+bedrag: integer;
+end;
+
+var FILE_KLANTEN, FILE_BEWERKINGEN: string;
+
+var arrKlanten: array of klant;
+var huidigeKlant: klant;
+var aantalKlanten: integer;
+var f: file of klant;
+
+var arrBewerkingen: array of bewerking;
+var huidigeBewerking: bewerking;
+var aantalBewerkingen: integer;
+var g: file of bewerking;
+
+var btwNrBestaat: boolean;
+var teller, teller2: integer;
+var totAankoop, totVerkoop: integer;
+
+function ParseInt(input: string; var getal: integer): boolean;
+
+var code: word;
+
+begin
+  VAL(input, getal, code);
+  ParseInt := (code = 0);
+end;
+
+function IsGeldigBtwNummer(btwNr: string): boolean;
+
+var eerste7Cijfers, laatste2Cijfers: integer;
+
+begin
+  IsGeldigBtwNummer := LENGTH(btwNr) = 11;
+  IsGeldigBtwNummer := IsGeldigBtwNummer AND (btwNr[4] = '.') AND (btwNr[8] = '.');
+  IsGeldigBtwNummer := IsGeldigBtwNummer AND ParseInt(Copy(btwNr, 1, 3) + Copy(btwNr, 5, 3) + btwNr[9], eerste7Cijfers);
+  IsGeldigBtwNummer := IsGeldigBtwNummer AND ParseInt(Copy(btwNr, 10, 2), laatste2Cijfers);
+  IsGeldigBtwNummer := IsGeldigBtwNummer AND ( (97 - (eerste7Cijfers MOD 97) = laatste2Cijfers ) );
+end;
+
+begin
+  FILE_KLANTEN := 'klanten';
+  FILE_BEWERKINGEN := 'bewerkingen';
+
+  SETLENGTH(arrKlanten, 10);
+  aantalKlanten := 0;
+
+  SETLENGTH(arrBewerkingen, 10);
+  aantalBewerkingen := 0;
+
+  ASSIGN(f, FILE_KLANTEN);
+  RESET(f);
+
+  while NOT EOF(f) do
+  begin
+    read(f, huidigeKlant);
+    if NOT IsGeldigBtwNummer(huidigeKlant.btwNummer) then
+    begin
+      writeln('Foutief btw-nummer: ', huidigeKlant.btwNummer, huidigeKlant.naam:35);
+    end
+    else
+    begin
+      arrKlanten[aantalKlanten] := huidigeKlant;
+      aantalKlanten := aantalKlanten + 1;
+      if (aantalKlanten > LENGTH(arrKlanten) - 1) then
+      begin
+        SETLENGTH(arrKlanten, LENGTH(arrKlanten) * 2);
+      end;
+    end;
+  end;
+
+  writeln();
+  CLOSE(f);
+
+  ASSIGN(g, FILE_BEWERKINGEN);
+  RESET(g);
+
+  while NOT EOF(g) do
+  begin
+    read(g, huidigeBewerking);
+    // Komt de BTW-nummer van de bewerking overeen met een van de BTW-nummers van onze klanten?;
+    btwNrBestaat := false;
+    teller := 0;
+    while (NOT btwNrBestaat) AND (teller < aantalKlanten) do
+    begin
+      btwNrBestaat := arrKlanten[teller].btwNummer = huidigeBewerking.btwNummer;
+      teller := teller + 1;
+    end;
+    if (NOT btwNrBestaat) then
+    begin
+      writeln('Fout btw-nummer  : ', huidigeBewerking.btwNummer, huidigeBewerking.aanOfVerkoop:5, huidigeBewerking.bedrag:5);
+    end
+    else
+    begin
+      // Is het karakter voor aan- of verkoop correct?;
+      if (huidigeBewerking.aanOfVerkoop <> 'a') AND (huidigeBewerking.aanOfVerkoop <> 'v') then
+      begin
+        writeln('Foute aan-verkoop: ', huidigeBewerking.btwNummer, huidigeBewerking.aanOfVerkoop:5, huidigeBewerking.bedrag:5);
+      end
+      else
+      begin
+        arrBewerkingen[aantalBewerkingen] := huidigeBewerking;
+        aantalBewerkingen := aantalBewerkingen + 1;
+        if (aantalBewerkingen > LENGTH(arrBewerkingen) - 1) then
+        begin
+          SETLENGTH(arrBewerkingen, LENGTH(arrBewerkingen) * 2);
+        end;
+      end;
+    end;
+  end;
+
+  CLOSE(g);
+  writeln();
+
+  for teller := 0 to aantalKlanten - 1 do
+  begin
+    write(arrKlanten[teller].btwNummer, arrKlanten[teller].naam:30);
+    totAankoop := 0;
+    totVerkoop := 0;
+
+    for teller2 := 0 to aantalBewerkingen - 1 do
+    begin
+      if (arrKlanten[teller].btwNummer = arrBewerkingen[teller2].btwNummer) then
+      begin
+        case (arrBewerkingen[teller2].aanOfVerkoop) of
+          'a':
+            begin
+              totAankoop := totAankoop + arrBewerkingen[teller2].bedrag;
+            end;
+          else
+            totVerkoop := totVerkoop + arrBewerkingen[teller2].bedrag;
+          end;
+      end;
+    end;
+
+    write(totAankoop:8, totVerkoop:8);
+
+    if (totVerkoop > totAankoop) then
+    begin
+      writeln(Concat('(', InttoStr(totVerkoop - totAankoop), ')'):8);
+    end
+    else
+    begin
+      writeln((ABS(totVerkoop - totAankoop)):8);
+    end;
+
+  end;
+
+  writeln();
+  writeln('Druk op <ENTER> om het programma te stoppen');
+  readln();
+end.
