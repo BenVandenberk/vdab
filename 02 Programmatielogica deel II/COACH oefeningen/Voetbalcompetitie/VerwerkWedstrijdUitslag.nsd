@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root text="&#34;VerwerkWedstrijdUitslag(var ploeg, ploeg2: rangschikkinglijn; uitslag: wedstrijd)&#34;" comment="&#34;&#34;" color="ffffff" type="sub" style="nice">
+	<children>
+		<instruction text="&#34;ploeg.aantal := ploeg.aantal + 1&#34;,&#34;ploeg2.aantal := ploeg2.aantal + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<instruction text="&#34;ploeg.goals := ploeg.goals + uitslag.goals&#34;,&#34;ploeg2.goals := ploeg2.goals + uitslag.goals2&#34;,&#34;ploeg.goalsTegen := ploeg.goalsTegen + uitslag.goals2&#34;,&#34;ploeg2.goalsTegen := ploeg2.goalsTegen + uitslag.goals&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+		<alternative text="&#34;uitslag.goals = uitslag.goals2&#34;" comment="&#34;&#34;" color="ffffff">
+			<qTrue>
+				<instruction text="&#34;// Gelijkspel&#34;,&#34;ploeg.gelijk := ploeg.gelijk + 1&#34;,&#34;ploeg2.gelijk := ploeg2.gelijk + 1&#34;,&#34;ploeg.punten := ploeg.punten + 1&#34;,&#34;ploeg2.punten := ploeg2.punten + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+			</qTrue>
+			<qFalse>
+				<alternative text="&#34;uitslag.goals &#62; uitslag.goals2&#34;" comment="&#34;&#34;" color="ffffff">
+					<qTrue>
+						<instruction text="&#34;// ploeg 1 wint&#34;,&#34;ploeg.gewonnen := ploeg.gewonnen + 1&#34;,&#34;ploeg.punten := ploeg.punten + 2&#34;,&#34;ploeg2.verloren := ploeg2.verloren + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;// ploeg 2 wint&#34;,&#34;ploeg2.gewonnen := ploeg2.gewonnen + 1&#34;,&#34;ploeg2.punten := ploeg2.punten + 2&#34;,&#34;ploeg.verloren := ploeg.verloren + 1&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+					</qFalse>
+				</alternative>
+			</qFalse>
+		</alternative>
+	</children>
+</root>
