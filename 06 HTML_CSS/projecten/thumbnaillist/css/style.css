@@ -1,0 +1,43 @@
+ @charset "UTF-8"; 
+ 
+ body {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:100%;  						  	/*  1em=16px */
+}
+.kolom {
+	width: 26em;								/*  400px */
+	padding:0;
+}
+
+/*  THUMBLIST */
+.thumblist {
+	width: 100%;
+	margin: 0;
+	padding: 0.5em 0; /* 6px */
+	background: #EEE;
+	list-style: none;
+	font-size: 0.75em;
+}
+.thumblist li {
+	border: 1px dashed silver;
+	padding: 0.5em;
+	margin: 0.5em;
+	overflow: hidden;
+	height: 7em;
+}
+.thumblist img {
+	float: left;
+	margin-right: 0.5em;
+}
+.thumblist a {
+	color: inherit;
+	text-decoration: none;
+}
+.thumblist h4 {
+	font-size: 1.166em;
+	margin: 0 0 0.1em 0;
+	color: #0099FF;
+}
+.thumblist p {
+   margin:0 0 0.1em 0;
+}

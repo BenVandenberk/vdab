@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>De Plantenshop</title>
+	<link type="text/css" href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="wrapper">
+
+	<header class="header">
+		<h1>De Plantenshop</h1>
+		<p>een oefening HTML-CSS voor de basis opleiding</p>
+	</header>
+	
+	<section class="midden">
+	
+		<nav class="menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li class="actief"><a href="#">Shop</a></li>
+				<li><a href="#">Verzorging</a></li>
+				<li><a href="#">Galerij</a></li>
+				<li><a href="#">Over ons</a></li>
+			</ul>
+		</nav>
+		
+		<section class="main">
+			<h2>Online shop</h2>
+			<p>maak hier uw aankopen</p>
+			<img src="img/flowers_1024_400.jpg" alt="paarse bloemen">
+			
+			<h2>Zoeken</h2>
+			<p>Zoek een plant die past voor uw tuin</p>
+			
+			<div class="form">
+			
+				<form>
+					
+					<div>
+						<label for="categorie">wat zoekt u?</label>
+						<select name="categorie" id="categorie">
+							<option>--kies een categorie--</option>
+							<option>bomen</option>
+							<option>struiken</option>
+							<option>bloemen</option>
+							<option>vaste planten</option>
+						</select>
+					</div>
+					
+					<div>
+						<label for="bodem">welke bodem?</label>
+						<select name="bodem" id="bodem">
+							<option>--kies een bodemsoort--</option>
+							<option>zandig</option>
+							<option>klei</option>
+							<option>leem</option>
+							<option>bosgrond</option>
+						</select>
+					</div>
+					
+					<div>
+						<label>Standplaats:</label>						
+						<input type="radio" name="standplaats" id="zonnig">
+						<label for="zonnig">zonnig</label>
+						<input type="radio" name="standplaats" id="halfschaduw">
+						<label for="halfschaduw">halfschaduw</label>
+						<input type="radio" name="standplaats" id="schaduw">
+						<label for="schaduw">schaduw</label>
+					</div>
+					
+					<div></div>
+					
+				</form>
+			
+			</div>
+		</section>
+	
+	</section>
+	
+	<footer class="footer cf">
+		<p>&copy; Copyright vdab</p>
+	</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+ @charset "UTF-8"; 
+ 
+ body {
+	 background-color: white;
+ }
+ 
+ /* STRUCTUUR EN LAYOUT */
+ .wrapper {
+	 width: 1024px;
+	 margin: 0 auto;
+ } 
+ .midden {
+	 float: left;
+	 width: 80%;
+ }
+ 
+ /* HEADER */ 
+ .header {
+	 text-align: right;
+	 background-color: #eeeeee;
+	 font-family: Verdana, sans-serif;
+	 padding-right: 1em;
+ } 
+ .header > h1 {
+	 color: red;
+ }
+ 
+ /* FOOTER */
+ .footer {
+	 text-align: center;
+	 background-color: #79796a;
+	 padding: 0.45em 0;
+ }
+ 
+ /* SIDE NAV */
+ nav.menu {
+	 background-color: #646473;
+	 width: 20%;
+	float:left	 
+ } 
+ nav.menu ul {
+	 width: 20%;
+	 padding: 0;
+	 list-style-type: none;
+ } 
+ nav.menu ul li {
+	 padding: 0.5em;
+	 margin-left: 0.5em;
+	 font-family: monospace;
+	 color: white;
+ } 
+ nav.menu ul li a {
+	 text-decoration: none;
+	 font-family: inherit;
+	 color: inherit;
+ }
+ nav.menu ul li a:hover, nav.menu ul li a:active {
+	 text-decoration: none;
+	 color: #2693ff;
+ }
+ nav.menu ul li.actief {
+	 color: #2693ff;
+ }
+ 
+ /* MAIN */
+ .main {	 
+ }
+ section.main > img {
+	 float: left;
+	 border-top: 16px solid purple;
+	 border-bottom: 16px solid purple;
+	 width: 80%
+ } 
+ .main > h2 {
+	 color: green;
+	 font-family: Arial;
+ }
+ 
+ /*
+clearfix hack
+http://nicolasgallagher.com/micro?clearfix?hack/
+*/
+.cf {
+	clear: both;
+}
+.clearFix:before, .clearFix:after {
+    content: " ";
+    display: table;
+}
+.clearFix:after {
+    clear: both;
+}
+/* enkel voor IE6/7 */
+.clearFix {
+    *zoom: 1;
+}
