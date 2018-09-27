@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS PF taak: feature sensing</title>
+<style type="text/css">
+.rood{background-color:#FF8ABF}
+.groen{background-color:#FF9;}
+#browserTest{font-weight:bold; background-color:#FF9;}
+#featureLijst{width:500px;}
+.support{float:right;}
+ul{background-color:#D8E6F3;}
+li{margin:0.2em;}
+</style>
+<script>
+
+var aFeatures = [
+["document.images", document.images],
+["document.layers", document.layers],
+["document.all", document.all],
+["document.getElementById", document.getElementById],
+["document.querySelector", document.querySelector], 
+["document.styleSheets", document.styleSheets],
+["document.createElement", document.createElement],
+["document.createNodeIterator", document.createNodeIterator], 
+["document.implementation.createDocument", document.implementation.createDocument], 
+["window.walkTheDog", window.walkTheDog], 
+["window.focus", window.focus], 
+["window.ActiveXObject", window.ActiveXObject], 
+["window.XMLHttpRequest", window.XMLHttpRequest], 
+["window.localStorage", window.localStorage], 
+["[].push", [].push], 
+["[].filter", [].filter], 
+["Object.prototype", Object.prototype], 
+["navigator.geolocation", navigator.geolocation], 
+["document.documentElement.classlist", document.documentElement.classlist]
+];
+
+//===================================
+window.onload = function () {
+	var eFeatureDiv = document.getElementById('featureLijst');
+	var eFeatureList = document.createElement('ul');
+	
+	for (var i = 0; i < aFeatures.length; i++) {
+		var eFeature = document.createElement('li');
+		
+		eFeature.innerHTML = aFeatures[i][0];
+		
+		var eYesNo = document.createElement('div');
+		eYesNo.setAttribute('class', 'support');
+		
+		if (aFeatures[i][1]) {
+			eYesNo.innerHTML = "Ja";
+			eFeature.setAttribute('class', 'groen');
+		} else {
+			eYesNo.innerHTML = "Nee";
+			eFeature.setAttribute('class', 'rood');
+		}
+		
+		eFeature.appendChild(eYesNo);
+		
+		eFeatureList.appendChild(eFeature);
+	}
+	
+	eFeatureDiv.appendChild(eFeatureList);
+}
+
+</script>
+</head>
+
+<body>
+
+<h1>JS PF taak Feature sensing</h1>
+<div id="browserTest"></div>
+<p> ondersteunt de volgende objecten, collections, methods, properties:</p>
+<div id="featureLijst"></div>
+
+</body>
+</html>
